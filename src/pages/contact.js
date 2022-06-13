@@ -69,7 +69,7 @@ export default function Contact() {
       <form
         id="contact-form"
         onSubmit={handleSubmit}
-        emailto="paul88vera@gmail.com"
+        emailto="placeholder@email.com"
       >
         <div>
           <label htmlFor="name">Name:</label>
