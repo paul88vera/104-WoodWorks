@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+/** ROOT CSS -- START */
+:root{
+  --primary-color: rgb(78, 78, 78);
+  --secondary-color: rgb(169, 170, 170);
+  --accent-color: rgb(48, 174, 134);
+  --black-text: rgb(24, 24, 24);
+  --white-text: rgb(247, 255, 252);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section {
+  padding: 2em;
 }
+.btn {
+  padding: 1em 2em;
+  margin: 2em 0;
+  background-color: var(--accent-color);
+  border: var(--black-text);
+  color: var(--white-text);
+}
+/** ---- END ---- */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/** MOBILE HEADER -- START */
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  align-content: center;
+  padding: 1em;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  color: var(--white-text);
+}
+nav {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+.nav-link {
+  display: flex;
+  margin: 1em 0;
+  text-align: center;
+  width: 100%;
+}
+.nav-link > a, header > h1 > a {
+  color: var(--white-text);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  padding: 1em 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+.nav-link > a:hover {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}
+/** ------- END ------- */
+
+
+/** MOBILE ERROR PAGE -- START */
+#error-page {
+  padding: 1em;
+  font-size: 60px;
+  color: var(--accent-color);
+  text-shadow: 2px 3px 3px var(--secondary-color);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/** ------- END -------- */
+/** SHOP -- START */
+#shop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5em;
+}
+.card {
+  padding: 2em;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media only screen and (min-width:720px) {
+  /* Header Desktop CSS */
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: end;
+  }
+  .nav-link-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-link > a {
+    margin: 0;
+  }
+  /* Homepage Desktop CSS */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

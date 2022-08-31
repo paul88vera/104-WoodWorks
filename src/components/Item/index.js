@@ -5,20 +5,20 @@ export default function Item() {
  const title = state.title
  const price = state.price
 
- // const [items, setItems] = useState([])
+//  const [items, setItems] = useState([])
 
- // const [title, setTitle] = useState(() => {
- //  return "Hello There..."
- // })
+//  const [title, setTitle] = useState(() => {
+//   return "Hello There..."
+//  })
 
 
 
  return (
   <>
    <h3>{title}</h3>
-   <img src="#" alt="Image goes here" />
+   <img src="https://www.unsplash.it/500/250" alt="Image goes here" />
    <p>{price}</p>
-   <button>View Details</button>
+   <button className="btn">View Details</button>
   </>
  )
 }

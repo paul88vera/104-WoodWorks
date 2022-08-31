@@ -1,7 +1,7 @@
 export default function ErrorPage() {
  return (
-  <div>
-   ERROR! PAGE IS NOT FOUND!
-  </div>
+  <section id="error-page">
+   ERROR 403! <br/> <br/> YOU'RE ON THE WRONG PAGE, MAN!
+  </section>
  )
 }

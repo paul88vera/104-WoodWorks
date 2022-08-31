@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <nav>
+    <header>
       <h1>
-        <img src="#" alt="10-4 Woodworks Logo" />
+        <a href="/"><img src="#" alt="10-4 Woodworks Logo" /></a> 
       </h1>
-      <ul>
+      <nav>
+      <ul className="nav-link-container">
         <li className="nav-link">
           <Link to="/">Home</Link>
         </li>
@@ -20,6 +21,7 @@ export default function Nav() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
-    </nav>
+      </nav>
+    </header>
   );
 }
