@@ -65,14 +65,15 @@ export default function Contact() {
         If you have questions or want more information about any of my projects,
         let me know down below.
       </p>
-      <br />
+      <br/>
       <form
         id="contact-form"
         onSubmit={handleSubmit}
         emailto="placeholder@email.com"
       >
-        <div>
-          <label htmlFor="name">Name:</label>
+        <div className="input-container">
+          <label htmlFor="name"><strong>Name:</strong></label>
+          <br/>
           <input
             type="text"
             defaultValue={name}
@@ -80,8 +81,9 @@ export default function Contact() {
             name="name"
           />
         </div>
-        <div>
-          <label htmlFor="email">Email address:</label>
+        <div className="input-container">
+          <label htmlFor="email"><strong>Email address:</strong></label>
+          <br/>
           <input
             type="email"
             defaultValue={email}
@@ -89,8 +91,9 @@ export default function Contact() {
             onBlur={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor="message">Message:</label>
+        <div className="input-container">
+          <label htmlFor="message"><strong>Message:</strong></label>
+          <br/>
           <textarea
             name="message"
             defaultValue={message}
@@ -103,7 +106,7 @@ export default function Contact() {
             </div>
           )}
         </div>
-        <button data-testid="sub" type="submit">
+        <button data-testid="sub" type="submit" className="btn">
           SUBMIT
         </button>
       </form>

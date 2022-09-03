@@ -16,9 +16,11 @@ export default function Item() {
  return (
   <>
    <h3>{title}</h3>
-   <img src="https://www.unsplash.it/500/250" alt="Image goes here" />
+   <br/>
+   <img src="https://www.unsplash.it/500/250" />
+   <br/>
    <p>{price}</p>
-   <button className="btn">View Details</button>
+   <button className="btn">details</button>
   </>
  )
 }

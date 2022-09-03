@@ -2,7 +2,8 @@
 :root{
   --primary-color: rgb(78, 78, 78);
   --secondary-color: rgb(169, 170, 170);
-  --accent-color: rgb(48, 174, 134);
+  --accent-color: rgb(18, 163, 136);
+  --clicked-color: rgb(13, 119, 100);
   --black-text: rgb(24, 24, 24);
   --white-text: rgb(247, 255, 252);
 }
@@ -17,10 +18,19 @@ section {
 }
 .btn {
   padding: 1em 2em;
-  margin: 2em 0;
+  margin: 1em 0;
   background-color: var(--accent-color);
   border: var(--black-text);
   color: var(--white-text);
+  font-weight: 600;
+  font-size: 18px;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--clicked-color);
+}
+.btn:active {
+  color: black;
 }
 /** ---- END ---- */
 
@@ -81,19 +91,86 @@ nav {
   align-items: center;
 }
 /** ------- END -------- */
-/** SHOP -- START */
-#shop {
+/** MOBILE SHOP -- START */
+/* #shop {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+} */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   gap: 5em;
+  margin-top: 3em;
 }
 .card {
   padding: 2em;
-  background-color: var(--secondary-color);
+  background-color:rgba(220, 220, 220, 0.739);
   border-radius: 5px;
 }
+.card > img {
+  max-width: 250px;
+}
+/** ------- END -------- */
 
+/** MOBILE CONTACT -- START */
+#contact-form input, #contact-form textarea {
+  padding: .5em;
+  line-height: 18px;
+  font-size: 18px;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
+input[type=button], input[type=submit] {
+  background-color: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+}
+.error-text {
+  color: red;
+  font-weight: 600;
+  font-size: large;
+}
+
+/** ------- END -------- */
 @media only screen and (min-width:720px) {
   /* Header Desktop CSS */
   header {
@@ -110,6 +187,18 @@ nav {
   .nav-link > a {
     margin: 0;
   }
-  /* Homepage Desktop CSS */
-
+  /* SHOP Desktop CSS */
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .contact > h2, .contact > p {
+    padding: 0 .5em;  
+  }
+  #contact-form {
+    width: 50%;
+    justify-content: center;
+  }
 }
