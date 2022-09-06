@@ -57,10 +57,10 @@ export default function Contact() {
   }
 
   return (
-    <section className="contact">
-      <h2 data-testid="con" className="title">
+    <section id="contact">
+      {/* <h2 data-testid="con" className="title">
         Contact Me
-      </h2>
+      </h2> */}
       <p>
         If you have questions or want more information about any of my projects,
         let me know down below.

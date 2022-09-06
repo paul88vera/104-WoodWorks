@@ -19,8 +19,11 @@ export default function Item() {
    <br/>
    <img src="https://www.unsplash.it/500/250" />
    <br/>
-   <p>{price}</p>
-   <button className="btn">details</button>
+   {/* <p>{price}</p> */}
+   <div className="shop-btn-container">
+   <button className="btn-details">details</button>
+   <button className="btn">add to cart</button>
+   </div>
   </>
  )
 }

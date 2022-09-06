@@ -1,7 +1,7 @@
 /** ROOT CSS -- START */
 :root{
   --primary-color: rgb(78, 78, 78);
-  --secondary-color: rgb(169, 170, 170);
+  --secondary-color: rgba(223, 223, 223, 0.17);
   --accent-color: rgb(18, 163, 136);
   --clicked-color: rgb(13, 119, 100);
   --black-text: rgb(24, 24, 24);
@@ -13,14 +13,17 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-section {
+body {
+  background-color: var(--secondary-color);
+}
+#contact{
   padding: 2em;
 }
 .btn {
-  padding: 1em 2em;
-  margin: 1em 0;
+  padding: .8em 3em;
   background-color: var(--accent-color);
   border: var(--black-text);
+  border-radius: 30px;
   color: var(--white-text);
   font-weight: 600;
   font-size: 18px;
@@ -32,22 +35,32 @@ section {
 .btn:active {
   color: black;
 }
+.btn-details {
+  background-color: transparent;
+  border: solid 2px var(--accent-color);
+  border-radius: 40px;
+  padding: .7em 2em;
+  font-size: 18px;
+  color: var(--accent-color);
+}
+.btn-details:hover {
+  background-color: var(--accent-color);
+  color: var(--white-text);
+  cursor: pointer;
+}
 /** ---- END ---- */
-
 /** MOBILE HEADER -- START */
 header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  padding: 1em;
   flex-wrap: wrap;
   background-color: var(--primary-color);
-  color: var(--white-text);
 }
 nav {
-  margin: 1em 0;
+  margin: 0em 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -58,7 +71,6 @@ nav {
 }
 .nav-link {
   display: flex;
-  margin: 1em 0;
   text-align: center;
   width: 100%;
 }
@@ -68,23 +80,21 @@ nav {
   font-size: 18px;
   font-weight: 600;
   width: 100%;
+  margin: 0 1em;
   padding: 1em 2em;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 1px;
 }
 .nav-link > a:hover {
-  color: var(--primary-color);
-  background-color: var(--accent-color);
+  color: var(--accent-color);
 }
 /** ------- END ------- */
-
-
 /** MOBILE ERROR PAGE -- START */
 #error-page {
   padding: 1em;
-  font-size: 60px;
+  font-size: 40px;
   color: var(--accent-color);
-  text-shadow: 2px 3px 3px var(--secondary-color);
+  text-shadow: 1px 1px 30px 10px var(--black-text);
   height: auto;
   display: flex;
   justify-content: center;
@@ -92,34 +102,39 @@ nav {
 }
 /** ------- END -------- */
 /** MOBILE SHOP -- START */
-/* #shop {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-} */
 .card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
-  gap: 5em;
+  gap: 2em;
   margin-top: 3em;
 }
 .card {
-  padding: 2em;
-  background-color:rgba(220, 220, 220, 0.739);
-  border-radius: 5px;
+  padding: 3em;
+  margin: 1em;
+  background-color:rgba(255, 255, 255, 0.739);
+  box-shadow: 0px 0px 20px 1px rgba(172, 170, 170, 0.189);
+  border-radius: 10px;
+}
+.card:hover {
+  box-shadow: 0px 0px 20px 1px rgba(75, 75, 75, 0.189);
+  cursor: pointer;
+  scale: 101%;
 }
 .card > img {
   max-width: 250px;
 }
+.shop-btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  gap: 1em;
+}
 /** ------- END -------- */
-
 /** MOBILE CONTACT -- START */
 #contact-form input, #contact-form textarea {
   padding: .5em;
@@ -169,8 +184,53 @@ input[type=button], input[type=submit] {
   font-weight: 600;
   font-size: large;
 }
-
 /** ------- END -------- */
+/** -- MOBILE HOMEPAGE -- START -- */
+.para-img-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  height: auto;
+  margin: 0 0 2em 0;
+}
+.para-left, .img-right {
+  width: 100%;
+  padding: 2em;
+}
+#home-featured-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5em 1em;
+  justify-content: center;
+}
+#see-builds {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 30vh;
+  margin-top: 2em;
+  background-color: var(--primary-color);
+}
+#see-builds > a {
+  text-decoration: none;
+  color: var(--white-text);
+  font-size: 30px;
+  font-weight: 600;
+  border: solid 2px var(--accent-color);
+  padding: .5em 2em;
+  border-radius: 40px;
+}
+#see-builds > a:hover {
+  background-color: var(--accent-color);
+}
+/** ------- END -------- */
+/** -------------------
+  MEDIA QUERY --- START
+ -------------------- */
 @media only screen and (min-width:720px) {
   /* Header Desktop CSS */
   header {
@@ -179,6 +239,7 @@ input[type=button], input[type=submit] {
     flex-wrap: nowrap;
     align-content: flex-end;
     justify-content: end;
+    background-color: transparent;
   }
   .nav-link-container {
     display: flex;
@@ -186,19 +247,41 @@ input[type=button], input[type=submit] {
   }
   .nav-link > a {
     margin: 0;
+    color: var(--black-text);
   }
-  /* SHOP Desktop CSS */
-  .contact {
+  /* CONTACT Desktop CSS */
+  #contact {
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
   }
-  .contact > h2, .contact > p {
+  #contact > h2, .contact > p {
     padding: 0 .5em;  
   }
   #contact-form {
     width: 50%;
     justify-content: center;
+  }
+  /* SHOP Desktop CSS */
+  #shop {
+    justify-content: space-evenly;
+    padding: 1em;
+  }
+  .card {
+    margin: 0;
+  }
+  .shop-btn-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  /* HOMEPAGE Desktop CSS */
+  .para-img-center {
+    display: flex;
+    flex-direction: row;
+  }
+  .para-left, .img-right {
+    width: 40%;
   }
 }
