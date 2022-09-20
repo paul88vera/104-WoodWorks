@@ -26,7 +26,7 @@ export default function Home() {
         </div>
       </div>
       <br />
-      <div>
+      <div id="featured">
         <h2>FEATURED BUILDS</h2>
         <div id="home-featured-items">
           <div className="card">
@@ -41,6 +41,9 @@ export default function Home() {
         </div>
         <br />
         <div id="see-builds">
+          <h1>You choose the materials and the color of your build. Custom woodwork for a great price!</h1>
+          <br/>
+          <br/>
           <a href="/shop">SEE MORE BUILDS</a>
         </div>
         <br />

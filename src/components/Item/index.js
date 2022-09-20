@@ -15,10 +15,10 @@ export default function Item() {
 
  return (
   <>
+   <br/>
+   <img src="#" />
+   <br/>
    <h3>{title}</h3>
-   <br/>
-   <img src="https://www.unsplash.it/500/250" />
-   <br/>
    {/* <p>{price}</p> */}
    <div className="shop-btn-container">
    <button className="btn-details">details</button>
