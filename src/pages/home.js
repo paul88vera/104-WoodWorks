@@ -6,7 +6,7 @@ export default function Home() {
     <section className="homepage">
       <div className="para-img-center">
         <div className="para-left">
-          <img src="https://www.unsplash.it/600/400" alt="" />
+          <img src="/pexels-engin-akyurt-4627515.jpg" alt="" width="500"/>
         </div>
         <div className="img-right">
           <h2>10-4 WoodWork</h2>

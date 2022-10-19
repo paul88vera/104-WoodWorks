@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 export default function Item() {
- const [state, setState] = useState({ title: 'Hello There', price: "$4.00"})
- const title = state.title
- const price = state.price
+ const [state, setState] = useState({ image: "https://unsplash.it/200/200",title: 'Item', price: "$4.00"});
+ const title = state.title;
+ const price = state.price;
+ const image = state.image;
 
 //  const [items, setItems] = useState([])
 
@@ -16,13 +17,13 @@ export default function Item() {
  return (
   <>
    <br/>
-   <img src="#" />
+   <img src={image} alt=""/>
    <br/>
    <h3>{title}</h3>
-   {/* <p>{price}</p> */}
+   <p>{price}</p>
    <div className="shop-btn-container">
    <button className="btn-details">details</button>
-   <button className="btn">add to cart</button>
+   <button className="btn"></button>
    </div>
   </>
  )

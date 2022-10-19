@@ -20,6 +20,19 @@ export default function Footer() {
           <Link to="/login">Login</Link>
         </li>
       </ul>
+      <br/>
+      <br/>
+      <ul>
+      <li>
+        <a href="#"><img src="#" alt="" width="20"/>LinkedIn</a>
+        </li>
+      <li>
+        <a href="#"><img src="#" alt="" width="20"/>Facebook</a>
+        </li>
+      <li>
+        <a href="#"><img src="#" alt="" width="20"/>Instagram</a>
+        </li>
+      </ul>
     </footer>
   );
 }
