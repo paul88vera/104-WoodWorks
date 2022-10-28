@@ -17,11 +17,11 @@ export default function Item() {
   <>
    <h3>{title}</h3>
    <br/>
-   <img src="https://www.unsplash.it/500/250" />
+   <img src="#" />
    <br/>
-   {/* <p>{price}</p> */}
+   <p>{price}</p>
    <div className="shop-btn-container">
-   <button className="btn-details">details</button>
+   <button className="btn btn-white">details</button>
    <button className="btn">add to cart</button>
    </div>
   </>
