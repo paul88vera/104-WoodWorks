@@ -6,7 +6,8 @@ export default function Hero() {
           <img src="#" alt="" width="350"/>
         </div>
         <div className="img-right">
-          <h2>10-4 WoodWork</h2>
+          <span>Customize Your Build</span>
+          <br/>
           <br/>
           <p>
             In this confusing world of Contractors and Home Remodelers, You need
@@ -19,8 +20,13 @@ export default function Hero() {
           </p>
           <br/>
           <br/>
-          <button className="btn btn-blue">Free Quote</button>
+          <div className="cta-container">
+          <button className="btn btn-blue">Get a free quote</button>
+          <p><strong>Limited Time Offer!</strong></p>
+          </div>
         </div>
+        <br/>
+        <img src="https://unsplash.it//500/350/" alt="featured build" className="hero-banner-img" />
       </div>
     </>
   )

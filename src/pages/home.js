@@ -7,25 +7,14 @@ export default function Home() {
     <section className="homepage">
       <Hero />
       <br />
-      <div>
-        <h2>FEATURED BUILDS</h2>
         <div id="home-featured-items">
-          <div className="card">
+          <h2>Featured Builds</h2>
+          <br/>
             <Item />
-          </div>
-          <div className="card">
             <Item />
-          </div>
-          <div className="card">
             <Item />
-          </div>
+          <a href="/shop" className="btn see-builds">SEE MORE BUILDS</a>
         </div>
-        <br />
-        <div id="see-builds">
-          <a href="/shop">SEE MORE BUILDS</a>
-        </div>
-        <br />
-      </div>
       <Contact />
     </section>
   );

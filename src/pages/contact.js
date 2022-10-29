@@ -106,7 +106,7 @@ export default function Contact() {
             </div>
           )}
         </div>
-        <button data-testid="sub" type="submit" className="btn">
+        <button data-testid="sub" type="submit" className="btn btn-blue">
           SUBMIT
         </button>
       </form>
