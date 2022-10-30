@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <header>
       <h1>
-        <a href="/"><img src="#" alt="10-4 Woodworks Logo" /></a> 
+        <a href="/"><img src="#" alt="10-4" /></a> 
       </h1>
       <nav>
       <ul className="nav-link-container">
@@ -13,9 +13,6 @@ export default function Nav() {
         </li>
         <li className="nav-link">
           <Link to="/shop">Shop</Link>
-        </li>
-        <li className="nav-link">
-          <Link to="/custom">Custom</Link>
         </li>
         <li className="nav-link">
           <Link to="/contact">Contact</Link>
