@@ -13,6 +13,7 @@
   padding: 0;
   scroll-behavior: smooth;
   font-family: sans-serif;
+  overflow-x: hidden;
   font-family: sans-serif;
 }
 body{
@@ -131,22 +132,13 @@ header a {
 /** CONTACT - MOBILE */
 #contact {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  align-content:space-evenly;
-  background-color: #ccc;
-  padding-bottom: 5em;
-}
-#featured > h2 {
-  padding: 2em 0;
-  text-align: center;
-  background-color: #ccc;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 2em;
+  background-color: var(--light-bg-color);
 }
 .contact-para {
   display: flex;
-  flex-direction: column;
   flex-direction: column;
   justify-content: center;
   text-align: justify;
