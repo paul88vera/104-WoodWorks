@@ -58,14 +58,15 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      {/* <h2 data-testid="con" className="title">
-        Contact Me
-      </h2> */}
+      <div className="contact-para">
+      <h2 data-testid="con" className="contact-title">
+        Contact 10-4
+      </h2>
       <p>
-        If you have questions or want more information about any of my projects,
-        let me know down below.
+        If you have questions or want more information about my builds,
+        let me know down below. We will respond as soon as we are able.
       </p>
-      <br/>
+      </div>
       <form
         id="contact-form"
         onSubmit={handleSubmit}
@@ -106,6 +107,7 @@ export default function Contact() {
             </div>
           )}
         </div>
+        <br/>
         <button data-testid="sub" type="submit" className="btn btn-blue">
           SUBMIT
         </button>

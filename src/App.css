@@ -4,6 +4,7 @@
   --secondary-color: rgba(223, 223, 223, 0.17);
   --accent-color: #0079ff;
   --clicked-color: #044da1;
+  --light-bg-color: #f3f7ff;
   --black-text: rgb(0, 0, 0);
   --white-text: rgb(247, 255, 252);
 }
@@ -17,10 +18,12 @@
 }
 body{
   font-size: 17px;
+  color: inherit;
 }
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
@@ -44,7 +47,7 @@ li {
 }
 .btn-white {
   background-color: #fff;
-  color: #0079ff;
+  color: var(--accent-color);
   border: solid 1px var(--accent-color);
 }
 .btn-white:active {
@@ -73,7 +76,7 @@ header {
   position: fixed;
 }
 header a {
-  color:#f3f7ff;
+  color:var(--light-bg-color);
 }
 /** HERO - MOBILE */
 .hero-container {
@@ -83,7 +86,7 @@ header a {
   padding: 4em 2em 2em 2em;
   align-content: center;
   align-items: center;
-  background-color: #f3f7ff;
+  background-color: var(--light-bg-color);
 }
 .img-right span {
   font-size: 4em;
@@ -127,8 +130,70 @@ header a {
   border-radius: 20px;
 }
 /** CONTACT - MOBILE */
-
-
+#contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 2em;
+  background-color: var(--light-bg-color);
+}
+.contact-para {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  align-items: center;
+  align-content: center;
+  padding: 2em;
+}
+.contact-title {
+  font-size: 4em;
+  padding-bottom:.2em;
+  font-weight: 700;
+}
+.contact-para p {
+  font-size: 17px;
+}
+#contact-form {
+  display: block;
+  padding: 2em;
+  /* background-color: #0077ff7e; */
+  /* color: #fff; */
+  backdrop-filter: blur(80%);
+}
+input[type=text], input[type=email], textarea{
+  display: block;
+  width: 93%;
+  padding: 1em;
+  border: #cac8c8 solid 1px;
+  border-radius: 5px;
+  margin: 1em 0;
+}
+textarea{
+  resize: none;
+  height: 150px;
+}
+/** FOOTER - MOBILE */
+footer {
+  background-color: rgb(50, 50, 50);
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+footer a:hover {
+  background-color: #0079ff;
+}
+footer a {
+  padding: 2em;
+  color: #fff;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 /** NAV - DESKTOP */
 .nav-link-container {
   display: flex;

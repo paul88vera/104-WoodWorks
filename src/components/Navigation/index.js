@@ -15,9 +15,6 @@ export default function Nav() {
           <Link to="/shop">Shop</Link>
         </li>
         <li className="nav-link">
-          <Link to="/custom">Custom</Link>
-        </li>
-        <li className="nav-link">
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
