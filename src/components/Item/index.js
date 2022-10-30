@@ -14,16 +14,16 @@ export default function Item() {
 
 
  return (
-  <>
-   <br/>
-   <img src="#" />
+  <section id="items">
+   <img src="https://www.unsplash.it/250" alt=""/>
    <br/>
    <h3>{title}</h3>
-   {/* <p>{price}</p> */}
+   <p>{price}</p>
+   <br/>
    <div className="shop-btn-container">
-   <button className="btn-details">details</button>
-   <button className="btn">add to cart</button>
+   <button className="btn btn-blue">add to cart</button>
+   <button className="btn btn-white">details</button>
    </div>
-  </>
+  </section>
  )
 }
