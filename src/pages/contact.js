@@ -78,6 +78,7 @@ export default function Contact() {
           <input
             type="text"
             defaultValue={name}
+            placeholder="Jon Dough"
             onBlur={handleChange}
             name="name"
           />
@@ -89,6 +90,8 @@ export default function Contact() {
             type="email"
             defaultValue={email}
             name="email"
+            maxLength="60"
+            placeholder="example@email.com"
             onBlur={handleChange}
           />
         </div>
@@ -97,6 +100,7 @@ export default function Contact() {
           <br/>
           <textarea
             name="message"
+            placeholder="Write about your question or issue in detail..."
             defaultValue={message}
             onBlur={handleChange}
             rows="5"

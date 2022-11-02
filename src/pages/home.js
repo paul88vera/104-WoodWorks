@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <section className="homepage">
       <Hero />
-      <br />
+      <br/>
         <div id="home-featured-items">
           <h2>Featured Builds</h2>
           <br/>
