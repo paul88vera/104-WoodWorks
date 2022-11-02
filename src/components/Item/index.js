@@ -15,17 +15,6 @@ export default function Item() {
 
 
  return (
-<<<<<<< HEAD
-  <>
-   <br/>
-   <img src={image} alt=""/>
-   <br/>
-   <h3>{title}</h3>
-   <p>{price}</p>
-   <div className="shop-btn-container">
-   <button className="btn-details">details</button>
-   <button className="btn"></button>
-=======
   <section id="items">
    <img src="https://www.unsplash.it/250" alt=""/>
    <br/>
@@ -35,7 +24,6 @@ export default function Item() {
    <div className="shop-btn-container">
    <button className="btn btn-blue">add to cart</button>
    <button className="btn btn-white">details</button>
->>>>>>> develop
    </div>
   </section>
  )
