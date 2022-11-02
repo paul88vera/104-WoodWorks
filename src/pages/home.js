@@ -29,8 +29,7 @@ export default function Home() {
       </div>
 =======
       <Hero />
->>>>>>> develop
-      <br />
+      <br/>
         <div id="home-featured-items">
           <h2>Featured Builds</h2>
           <br/>
