@@ -4,6 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <ul>
+        <h4>Navigation</h4>
         <li>
           <Link to="/">Home</Link>
         </li>
