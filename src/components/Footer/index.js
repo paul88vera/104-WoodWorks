@@ -20,7 +20,7 @@ export default function Footer() {
       </ul>
       <br/>
       <br/>
-      <ul>
+      <ul className="sub-nav">
       <li>
         <a href="#"><img src="#" alt="" width="20"/>LinkedIn</a>
         </li>
