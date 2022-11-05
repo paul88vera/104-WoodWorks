@@ -147,9 +147,8 @@ header a {
 }
 /** SHOP - MOBILE */
 #shop h2 {
-  padding: 3em 0 1em 0;
+  padding: 3em 1em 1em 1em;
   font-size: 2.5em;
-  width: 100%;
   text-align: center;
 }
 .card-container {
