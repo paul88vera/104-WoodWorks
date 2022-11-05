@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <header>
       <h1>
-        <a href="/"><img src="#" alt="10-4" /></a> 
+        <a href="/"><img src="#" alt="10-4 Woodworks" /></a> 
       </h1>
       <nav>
       <ul className="nav-link-container">

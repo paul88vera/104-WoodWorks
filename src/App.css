@@ -194,6 +194,7 @@ header a {
 .contact-title {
   font-size: 4em;
   padding-bottom:.2em;
+  width: 80%;
   font-weight: 700;
   text-align: center;
 }
@@ -254,18 +255,21 @@ footer ul h4 {
   padding: 2em 1em .2em 1em;
 }
 /** NAV - DESKTOP */
-/* .nav-link-container {
+.nav-link-container {
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
   height: 100vh;
   display: none;
-} */
+}
 
-@media screen and (min-width:400px) {
+@media screen and (min-width:470px) {
   #contact-form {
     padding: 1em;
+  }
+  .contact-title {
+    width: 100%;
   }
   #selection-container {
     flex-direction: row;
