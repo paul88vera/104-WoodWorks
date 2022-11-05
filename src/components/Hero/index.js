@@ -2,9 +2,9 @@ export default function Hero() {
   return(
     <>
     <div className="hero-container">
-        <div className="para-left">
+        {/* <div className="para-left">
           <img src="#" alt="" width="350"/>
-        </div>
+        </div> */}
         <div className="img-right">
           <span>Customize Your Build</span>
           <br/>
@@ -21,12 +21,12 @@ export default function Hero() {
           <br/>
           <br/>
           <div className="cta-container">
-          <button className="btn btn-blue">Get a free quote</button>
+          <button className="btn btn-blue first-btn">Get a free quote</button>
           <p><strong>Limited Time Offer!</strong></p>
           </div>
         </div>
         <br/>
-        <img src="https://unsplash.it//500/350/" alt="featured build" className="hero-banner-img" />
+        <img src="https://unsplash.it/1500/350/" width="100%" alt="featured build" className="hero-banner-img" />
       </div>
     </>
   )

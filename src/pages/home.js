@@ -1,10 +1,12 @@
 import Contact from "./contact";
 import Item from "../components/Item";
 import Hero from "../components/Hero";
+// import Sidebar from '../dist/react-burger-menu';
 
 export default function Home() {
   return (
     <section className="homepage">
+      {/* <Sidebar /> */}
       <Hero />
       <br/>
         <div id="home-featured-items">

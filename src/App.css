@@ -95,7 +95,7 @@ header a {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 4em 2em 2em 2em;
+  padding: 6em 2em 2em 2em;
   align-content: center;
   align-items: center;
   background-color: var(--light-bg-color);
@@ -108,10 +108,11 @@ header a {
 .cta-container {
   display: flex;
   flex-direction: column;
+  padding: 0 2em;
 }
 .hero-banner-img {
   padding: 2em 0;
-  width: 100%;
+  width: 0%;
 }
 /** HOME FEATURED ITEMS - MOBILE */
 #home-featured-items {
@@ -141,11 +142,46 @@ header a {
   padding: 2em;
   border: solid #ececec;
   border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.562);
+  backdrop-filter: blur(80%);
+}
+/** SHOP - MOBILE */
+#shop h2 {
+  padding: 3em 0 1em 0;
+  font-size: 2.5em;
+  width: 100%;
+  text-align: center;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 4em 1em;
+  background-color: var(--light-bg-color);
+}
+#selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 1em 0 2em 0;
+}
+#selection-container a {
+  color: var(--accent-color);
+}
+#selection-container a:hover {
+  color: var(--clicked-color);
+  border: var(--light-bg-color);
 }
 /** CONTACT - MOBILE */
 #contact {
   display: block;
-  padding: 4em 1em;
+  padding: 6em 1em 4em 1em;
   background-color: var(--light-bg-color);
 }
 .contact-para {
@@ -219,23 +255,38 @@ footer ul h4 {
   padding: 2em 1em .2em 1em;
 }
 /** NAV - DESKTOP */
-.nav-link-container {
+/* .nav-link-container {
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
   height: 100vh;
   display: none;
-}
+} */
 
 @media screen and (min-width:400px) {
   #contact-form {
     padding: 1em;
   }
-  
+  #selection-container {
+    flex-direction: row;
+  }
 }
 
 @media  screen and (min-width:768px) {
+  .hero-container, #home-featured-items, #contact, footer{
+    padding-right: 10em;
+    padding-left: 10em;
+  }
+  .hero-container{
+    padding-top: 6em;
+  }
+  .card-container {
+    padding: 2.5em;
+  }
+  .first-btn {
+    width: 40%;
+  }
   footer {
     display: flex;
     flex-wrap: nowrap;

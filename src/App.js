@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Shop from "./pages/shop";
 import Contact from "./pages/contact";
-import Login from "./pages/login";
 import ErrorPage from "./pages/errorPage";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
