@@ -134,11 +134,18 @@ header a {
   padding-left: .2em;
 }
 /** ITEMS - MOBILE */
+#item-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+}
 #items {
   display: flex;
   flex-direction: column;
-  margin: 1em auto;
+  margin: 1em;
   max-width: 250px;
+  height: auto;
   padding: 2em;
   border: solid #ececec;
   border-radius: 20px;
@@ -154,6 +161,7 @@ header a {
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   gap: 2em;
   padding: 4em 1em;

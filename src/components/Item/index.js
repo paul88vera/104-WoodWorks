@@ -1,30 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Item() {
- const [state, setState] = useState({ image: "https://unsplash.it/200/200",title: 'Item', price: "$4.00"});
- const title = state.title;
- const price = state.price;
- const image = state.image;
-
-//  const [items, setItems] = useState([])
-
-//  const [title, setTitle] = useState(() => {
-//   return "Hello There..."
-//  })
-
-
+export default function Item(props) {
+const item = props.item;
 
  return (
-  <section id="items">
-   <img src="https://www.unsplash.it/250" alt=""/>
+<section id="item-container">
+    {item.map((item) => (
+  <div id="items" key={item.id}>
+   <img src={item.image} alt=""/>
    <br/>
-   <h3>{title}</h3>
-   <p>{price}</p>
+   <h3>{item.name}</h3>
+   <p>{item.price}</p>
+   <br/>
+   <p>{item.category}</p>
+   <p>{item.description}</p>
    <br/>
    <div className="shop-btn-container">
    <button className="btn btn-blue">add to cart</button>
    <button className="btn btn-white">details</button>
    </div>
-  </section>
+  </div>
+    ))}
+</section>
  )
 }
