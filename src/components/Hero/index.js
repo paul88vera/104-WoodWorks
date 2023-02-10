@@ -1,14 +1,16 @@
+import hero from "../../images/hero.jpg";
+
 export default function Hero() {
-  return(
+  return (
     <>
-    <div className="hero-container">
-        {/* <div className="para-left">
-          <img src="#" alt="" width="350"/>
-        </div> */}
+      <div className="hero-container">
+        <div className="para-left">
+          <img className="hero-img" src={hero} alt="by Anna Shvets" width="100%" />
+        </div>
         <div className="img-right">
           <span>Customize Your Build</span>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <p>
             In this confusing world of Contractors and Home Remodelers, You need
             a reliable General Contractor that you can trust and believe in. The
@@ -18,16 +20,23 @@ export default function Hero() {
             the end of your project, you will still be able to send your kids to
             college!
           </p>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <div className="cta-container">
-          <button className="btn btn-blue first-btn">Get a free quote</button>
-          <p><strong>Limited Time Offer!</strong></p>
+            <button className="btn btn-blue first-btn">Get a free quote</button>
+            <p>
+              <strong>Limited Time Offer!</strong>
+            </p>
           </div>
         </div>
-        <br/>
-        <img src="https://unsplash.it/1500/350/" width="100%" alt="featured build" className="hero-banner-img" />
+        <br />
+        <img
+          src="https://unsplash.it/1500/350/"
+          width="100%"
+          alt="featured build"
+          className="hero-banner-img"
+        />
       </div>
     </>
-  )
+  );
 }

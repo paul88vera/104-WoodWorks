@@ -6,11 +6,13 @@ const item = props.item;
  return (
 <section id="item-container">
     {item.map((item) => (
-  <div id="items" key={item.id}>
+  <div className="items" key={item.id}>
+    <div className="item-img-container">
    <img src={item.image} alt=""/>
+    </div>
    <br/>
    <h3>{item.name}</h3>
-   <p>{item.price}</p>
+   <p>${item.price}</p>
    <br/>
    <p>{item.category}</p>
    <p>{item.description}</p>

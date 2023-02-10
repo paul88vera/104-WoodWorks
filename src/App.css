@@ -1,6 +1,8 @@
-/** ROOT CSS -- START */
+/**------------------
+** ROOT CSS -- START 
+--------------------*/
 :root{
-  --primary-color: rgba(48, 48, 48, 0.663);
+  --primary-color: rgba(48, 48, 48, 0.763);
   --secondary-color: rgba(193, 193, 193, 0.669);
   --accent-color: #0079ff;
   --clicked-color: #044da1;
@@ -25,8 +27,6 @@
   padding: 0;
   scroll-behavior: smooth;
   font-family: sans-serif;
-  overflow-x: hidden;
-  font-family: sans-serif;
 }
 body{
   font-size: 17px;
@@ -45,16 +45,16 @@ li {
   border-radius: 5px;
   font-size: 16px;
   font-weight: 700;
+  width: 100%;
   display: block;
   margin: 0em auto 1em auto;
-  width: 80%;
   cursor: pointer;
 }
 .btn-blue {
   background-color: var(--accent-color);
   color: #fff;
 }
-.btn-blue:active{
+.btn-blue:active {
  background-color: var(--clicked-color);
 }
 .btn-white {
@@ -69,12 +69,14 @@ li {
 .btn-blue:hover {
   background-color: #4b9bf8;
 }
-.btn-blue:hover, .btn-white:hover{
+.btn-blue:hover, .btn-white:hover {
   box-shadow: 1px 1px 5px #00000978 inset;
   scale: 96%;
   transition: .1s ease-in-out;
 }
-/** NAV - MOBILE */
+/**--------------------
+** NAV - MOBILE 
+---------------------*/
 header {
   width: 100%;
   height: 7vh;
@@ -85,17 +87,22 @@ header {
   align-items: center;
   align-content: center;
   background-color: var(--primary-color);
+  backdrop-filter: blur(10px);
   position: fixed;
+  z-index: 999;
 }
 header a {
   color:var(--light-bg-color);
 }
-/** HERO - MOBILE */
+/**----------------------
+** HERO - MOBILE 
+------------------------*/
 .hero-container {
   display: flex;
+  overflow-y: hidden;
+  background-position: fixed;
   flex-direction: column;
   text-align: center;
-  padding: 6em 2em 2em 2em;
   align-content: center;
   align-items: center;
   background-color: var(--light-bg-color);
@@ -112,9 +119,10 @@ header a {
 }
 .hero-banner-img {
   padding: 2em 0;
-  width: 0%;
 }
-/** HOME FEATURED ITEMS - MOBILE */
+/**-------------------------
+** HOME FEATURED ITEMS - MOBILE
+---------------------------*/
 #home-featured-items {
   display: flex;
   flex-direction: row;
@@ -133,26 +141,49 @@ header a {
   content: " >>";
   padding-left: .2em;
 }
-/** ITEMS - MOBILE */
+/**-----------------------
+** ITEMS - MOBILE
+-------------------------*/
 #item-container {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
   height: auto;
 }
-#items {
+.items {
   display: flex;
   flex-direction: column;
-  margin: 1em;
-  max-width: 250px;
-  height: auto;
+  justify-content: center;
+  max-width: 300px;
   padding: 2em;
-  border: solid #ececec;
+  margin: 1em;
+  text-align: left;
+  font-size: larger;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 10px #ddd;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.562);
   backdrop-filter: blur(80%);
 }
-/** SHOP - MOBILE */
+.item-img-container {
+  max-height: 300px;
+  max-width: 300px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.item-img-container img {
+  max-height: 300px;
+  object-fit: cover;
+}
+.shop-btn-container {
+  width: 100%;
+  max-width: 300px;
+}
+/**----------------------
+** SHOP - MOBILE 
+------------------------*/
 #shop h2 {
   padding: 3em 1em 1em 1em;
   font-size: 2.5em;
@@ -163,9 +194,13 @@ header a {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  margin: 0 auto;
   gap: 2em;
   padding: 4em 1em;
   background-color: var(--light-bg-color);
+}
+.card {
+  margin: 0 auto;
 }
 #selection-container {
   display: flex;
@@ -185,7 +220,9 @@ header a {
   color: var(--clicked-color);
   border: var(--light-bg-color);
 }
-/** CONTACT - MOBILE */
+/**------------------------
+** CONTACT - MOBILE
+---------------------------*/
 #contact {
   display: block;
   padding: 6em 1em 4em 1em;
@@ -232,7 +269,9 @@ textarea{
   max-width: 500px;
   margin: 0 auto;
 }
-/** FOOTER - MOBILE */
+/**---------------------
+** FOOTER - MOBILE
+----------------------*/
 footer {
   background-color: rgb(50, 50, 50);
 }
@@ -262,7 +301,9 @@ footer ul h4 {
   color: var(--secondary-color);
   padding: 2em 1em .2em 1em;
 }
-/** NAV - DESKTOP */
+/**----------------------
+** NAV - DESKTOP 
+------------------------*/
 .nav-link-container {
   display:flex;
   flex-direction: row;
@@ -271,7 +312,9 @@ footer ul h4 {
   height: 100vh;
   display: none;
 }
-
+/**----------------------
+** MEDIA QUERY
+------------------------*/
 @media screen and (min-width:470px) {
   #contact-form {
     padding: 1em;
@@ -285,13 +328,6 @@ footer ul h4 {
 }
 
 @media  screen and (min-width:768px) {
-  .hero-container, #home-featured-items, #contact, footer{
-    padding-right: 10em;
-    padding-left: 10em;
-  }
-  .hero-container{
-    padding-top: 6em;
-  }
   .card-container {
     padding: 2.5em;
   }
