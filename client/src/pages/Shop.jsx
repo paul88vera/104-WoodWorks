@@ -1,13 +1,16 @@
-import { useLoaderData } from "react-router-dom";
-import axios from "axios";
+import { Link, useLoaderData } from "react-router-dom";
+// import axios from "axios";
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
+import { getShop } from "../api/shop";
 
 export default function Shop() {
   const [modal, setModal] = useState(false);
-  const showModal = () => {
-    setModal((current) => !current);
-  };
+  
+  // const [cart, setCart] = useState([]);
+  // const showModal = () => {
+  //   setModal((current) => !current);
+  // };
   const closeModal = () => {
     setModal((current) => !current);
   };
@@ -30,9 +33,9 @@ export default function Shop() {
             <div className="card-title">{data.title}</div>
             <div className="card-price">{data.price}</div>
             <div className="shop-btn-container">
-              <button className="btn" onClick={showModal}>
+              <Link className="btn" to={`/shop/${data.id}`}>
                 View
-              </button>
+              </Link>
               <button className="btn">Add To Cart</button>
             </div>
           </div>
@@ -43,9 +46,7 @@ export default function Shop() {
 }
 
 export function loader({ request: { signal } }) {
-  return axios
-    .get("http://localhost:3000/shop", { signal })
-    .then((res) => res.data);
+  return getShop({ signal });
 }
 
 export const ShopRoute = {

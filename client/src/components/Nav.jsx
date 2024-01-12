@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { TiShoppingCart } from "react-icons/ti";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Nav() {
   return (
@@ -19,8 +21,13 @@ export default function Nav() {
       </div>
       <div className="cart-icon-section">
         <li>
+          <Link to="/profile">
+            <FaUserCircle />
+          </Link>
+        </li>
+        <li>
           <Link to="/cart">
-            <i className="fa fa-cart">Cart</i>
+            <TiShoppingCart />
           </Link>
         </li>
       </div>

@@ -10,10 +10,11 @@
 * {
   padding: 0;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
 }
 .container {
-  padding: 0.2em;
+  padding: 3em 1em;
 }
 .btn {
   padding: 0.2rem 0.5rem;
@@ -86,10 +87,11 @@
   justify-content: space-between;
   align-items: center;
   height: 4vh;
-  padding: 0.5em 1em;
+  padding: 1em;
   background-color: var(--main-bg);
   position: fixed;
-  width: 97%;
+  width: 100%;
+  box-sizing: border-box;
   z-index: 9999;
 }
 .nav-link-container,
@@ -114,8 +116,7 @@
   justify-content: flex-start;
   gap: 1em;
   padding: 1em;
-  margin-left: 16em;
-  margin-top: 3em;
+  margin-left: 13em;
 }
 .shop-card {
   max-width: 275px;
@@ -168,6 +169,8 @@
   left: 0;
   top: 0;
   height: 100svh;
+  max-width: 180px;
+  width: 100%;
   background-color: var(--text-secondary-color);
   box-shadow: 1px 1px 10px var(--text-color);
   text-align: left;
