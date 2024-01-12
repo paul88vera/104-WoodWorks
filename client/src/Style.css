@@ -15,11 +15,32 @@
 .container {
   padding: 0.2em;
 }
+.btn {
+  padding: 0.2rem 0.5rem;
+  max-width: 150px;
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+}
+.submit-btn {
+  background-color: var(--main-bg);
+  color: var(--text-secondary-color);
+  margin: 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background-color: var(--text-color);
+}
+
+/* Loading Spinner */
 .container.loading {
   filter: blur(5px);
   pointer-events: none;
 }
-
 .loading-spinner::after {
   content: "";
   z-index: 999;
@@ -30,7 +51,7 @@
   left: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  border: 20px solid transparent;
+  border: 15px solid transparent;
   border-bottom-color: var(--accent-color);
   animation: spin infinite 1.25s ease-in;
   mix-blend-mode: multiply;
@@ -46,7 +67,7 @@
   left: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  border: 20px solid transparent;
+  border: 15px solid transparent;
   border-top-color: var(--main-bg);
   animation: spin infinite 2s ease-in-out;
   mix-blend-mode: multiply;
@@ -64,9 +85,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 4vw;
+  height: 4vh;
   padding: 0.5em 1em;
   background-color: var(--main-bg);
+  position: fixed;
+  width: 97%;
+  z-index: 9999;
 }
 .nav-link-container,
 .cart-icon-section {
@@ -80,4 +104,72 @@
 .cart-icon-section a {
   color: var(--text-secondary-color);
   text-decoration: none;
+}
+
+/* SHOP CARDS */
+.shop-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1em;
+  padding: 1em;
+  margin-left: 16em;
+  margin-top: 3em;
+}
+.shop-card {
+  max-width: 275px;
+  background-color: rgb(38, 38, 38);
+  padding: 1em;
+  border-radius: 10px;
+  color: aliceblue;
+}
+.card-img {
+  height: 275px;
+  width: 275px;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.card-price {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.shop-btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: space-around;
+  margin-top: 0.5em;
+}
+.shop-modal {
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+}
+
+/* SHOP SIDEBAR */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 1em 1em 1em;
+  justify-content: start;
+  align-items: flex-start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100svh;
+  background-color: var(--text-secondary-color);
+  box-shadow: 1px 1px 10px var(--text-color);
+  text-align: left;
+  z-index: 0;
 }
