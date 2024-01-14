@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import ShopItem from "./pages/ShopItem";
 import Profile from "./pages/Profile";
+import PostItem from "./pages/PostItem";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
           { path: "contact", element: <Contact /> },
           { path: "cart", element: <Cart /> },
           { path: "profile", element: <Profile /> },
+          { path: "add", element: <PostItem /> },
           { path: "*", element: <Error /> },
         ],
       },
