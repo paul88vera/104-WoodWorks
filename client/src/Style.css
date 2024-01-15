@@ -14,9 +14,10 @@
   font-family: "Poppins", sans-serif;
 }
 .container {
-  padding: 5em 1em;
+  padding: 1em;
 }
-.btn {
+.btn,
+.shop-btn-container Link {
   padding: 0.2rem 0.5rem;
   max-width: 150px;
   width: 100%;
@@ -24,6 +25,9 @@
   outline: none;
   border: none;
   border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .submit-btn {
   background-color: var(--main-bg);
@@ -208,12 +212,11 @@
   left: 0;
   color: white;
 }
-
 /* SHOP SIDEBAR */
 .sidebar-container {
   display: flex;
   flex-direction: column;
-  padding: 6em 1em 1em 1em;
+  padding: 8em 1em 1em 1em;
   justify-content: start;
   align-items: flex-start;
   position: fixed;

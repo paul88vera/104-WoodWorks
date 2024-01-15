@@ -6,16 +6,19 @@ import { getShop } from "../api/shop";
 
 export default function Shop() {
   const [modal, setModal] = useState(false);
-  
+  // const dialog = useRef();
+
   // const [cart, setCart] = useState([]);
-  // const showModal = () => {
-  //   setModal((current) => !current);
-  // };
+  const showModal = () => {
+    setModal((current) => !current);
+  };
   const closeModal = () => {
     setModal((current) => !current);
+    // dialog.close();
   };
 
   const shop = useLoaderData();
+
   return (
     <>
       <Sidebar {...shop} />
@@ -34,9 +37,12 @@ export default function Shop() {
             <div className="card-price">{data.price}</div>
             <div className="shop-btn-container">
               <Link className="btn" to={`/shop/${data.id}`}>
-                View
+                Details
               </Link>
-              <button className="btn">Add To Cart</button>
+              <button onClick={showModal} className="btn">
+                Quick View
+              </button>
+              {/* <button className="btn">Add To Cart</button> */}
             </div>
           </div>
         ))}
