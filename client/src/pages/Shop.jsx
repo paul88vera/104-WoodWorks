@@ -34,7 +34,8 @@ export default function Shop() {
               <img src="../../../public/vite.svg" alt="item" width="275" />
             </div>
             <div className="card-title">{data.title}</div>
-            <div className="card-price">{data.price}</div>
+            <div className="card-sale-price">{data.sale}</div>
+            <div className="card-actual-price">{data.actual}</div>
             <div className="shop-btn-container">
               <Link className="btn" to={`/shop/${data.id}`}>
                 Details

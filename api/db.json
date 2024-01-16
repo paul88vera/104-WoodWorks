@@ -16,38 +16,65 @@
   "shop": [
     {
       "id": 1,
-      "itemId": 1,
       "title": "item 1",
       "img": "fdsa",
-      "price": "$150"
+      "actual": "$150",
+      "sale": "$50"
     },
     {
       "id": 2,
-      "itemId": 2,
       "title": "item 2",
       "img": "fdsa",
-      "price": "$250"
+      "actual": "$250",
+      "sale": "$150"
     },
     {
       "id": 3,
-      "itemId": 3,
       "title": "item 3",
       "img": "fdsa",
-      "price": "$350"
+      "actual": "$350",
+      "sale": "$250"
     },
     {
       "id": 4,
-      "itemId": 4,
       "title": "item 4",
       "img": "fdsa",
-      "price": "$450"
+      "actual": "$450",
+      "sale": "$350"
     },
     {
       "id": 5,
-      "itemId": 5,
       "title": "item 5",
       "img": "fdsa",
-      "price": "$550"
+      "actual": "$550",
+      "sale": "$450"
+    },
+    {
+      "itemId": null,
+      "title": "New Furniture",
+      "desc": "furniture",
+      "actual": "4000",
+      "sale": "3575",
+      "length": "32",
+      "width": "19",
+      "height": "25",
+      "fimg": "",
+      "ftitle": "Wooden Thing",
+      "fdesc": "Wooden Thing",
+      "id": 6
+    },
+    {
+      "title": "New w Colors",
+      "desc": "This thing has colors and stuff",
+      "actual": "330",
+      "sale": "240",
+      "length": "22",
+      "width": "30",
+      "height": "19",
+      "fimg": "",
+      "ftitle": "Wooden Thing P2",
+      "fdesc": "Wooden Thing P2",
+      "id": 7
     }
   ]
 }

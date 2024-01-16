@@ -40,7 +40,10 @@
 .submit-btn:hover {
   background-color: var(--text-color);
 }
-
+.error-message {
+  margin: 0.2em 0;
+  color: red;
+}
 /* Loading Spinner */
 .container.loading {
   filter: blur(5px);

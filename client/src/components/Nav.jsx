@@ -88,6 +88,9 @@ export default function Nav() {
             </div>
             <div className="cart-icon-section">
               <li>
+                <Link to="/add">Add New</Link>
+              </li>
+              <li>
                 <Link to="/profile">
                   <FaUserCircle />
                 </Link>

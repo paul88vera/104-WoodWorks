@@ -18,31 +18,36 @@
       "id": 1,
       "title": "item 1",
       "img": "fdsa",
-      "price": "$150"
+      "actual": "$150",
+      "sale": "$50"
     },
     {
       "id": 2,
       "title": "item 2",
       "img": "fdsa",
-      "price": "$250"
+      "actual": "$250",
+      "sale": "$150"
     },
     {
       "id": 3,
       "title": "item 3",
       "img": "fdsa",
-      "price": "$350"
+      "actual": "$350",
+      "sale": "$250"
     },
     {
       "id": 4,
       "title": "item 4",
       "img": "fdsa",
-      "price": "$450"
+      "actual": "$450",
+      "sale": "$350"
     },
     {
       "id": 5,
       "title": "item 5",
       "img": "fdsa",
-      "price": "$550"
+      "actual": "$550",
+      "sale": "$450"
     }
   ]
 }

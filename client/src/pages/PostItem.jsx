@@ -1,112 +1,78 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
+import PostForm, { postFormValidator } from "../components/PostForm";
+import { redirect, useActionData, useNavigation } from "react-router-dom";
+import { createItem, getShop } from "../api/shop";
 
 export default function PostItem() {
   const [signedIn] = useState(true);
+  const errors = useActionData();
+  const { state } = useNavigation();
+  const isSubmitting = state === "submitting";
+
   return (
     <>
       {signedIn ? (
-        <Form method="post" className="form">
-          <div className="form-group">
-            <div className="form-row">
-              <label htmlFor="title">Title</label>
-              <input type="text" name="title" id="title" />
-
-              <label htmlFor="description">Description</label>
-              <textarea
-                type="text"
-                name="description"
-                id="description"></textarea>
-            </div>
-
-            <div className="form-row">
-              <label htmlFor="actualPrice">Actual Price</label>
-              <input type="number" name="actualPrice" id="actualPrice" />
-
-              <label htmlFor="salePrice">Sale Price</label>
-              <input type="number" name="salePrice" id="salePrice" />
-            </div>
-
-            <div className="form-row">
-              <h3>List Colors</h3>
-              <label htmlFor="yellow">
-                Yellow
-                <input type="checkbox" name="yellow" />
-              </label>
-              <br />
-              <label htmlFor="red">
-                Red
-                <input type="checkbox" name="red" />
-              </label>
-              <br />
-              <label htmlFor="green">
-                Green
-                <input type="checkbox" name="green" />
-              </label>
-            </div>
-
-            <div className="form-row">
-              <h3>List Finishes</h3>
-              <label htmlFor="dark-brown">
-                Dark Brown <input type="checkbox" name="dark-brown" />
-              </label>
-              <br />
-              <label htmlFor="brown">
-                Brown <input type="checkbox" name="brown" />
-              </label>
-              <br />
-              <label htmlFor="light-brown">
-                Light Brown <input type="checkbox" name="light-brown" />
-              </label>
-            </div>
-
-            <div className="form-row">
-              <h3>Specifications</h3>
-              <h4>Dimensions</h4>
-              <label htmlFor="length">
-                Length <input type="number" name="length" />
-                in.
-              </label>
-              <br />
-              <label htmlFor="width">
-                Width <input type="number" name="width" />
-                in.
-              </label>
-              <br />
-              <label htmlFor="height">
-                Height <input type="number" name="height" />
-                in.
-              </label>
-            </div>
-
-            <div className="form-row">
-              <h4>Features</h4>
-              <label htmlFor="feature-title">
-                Feature Title
-                <input type="text" name="feature-title" id="feature-title" />
-              </label>
-              <br />
-              <label htmlFor="feature-description">
-                Feature Description
-                <input
-                  type="text"
-                  name="feature-description"
-                  id="feature-description"
-                />
-              </label>
-              <br />
-              <label htmlFor="feature-img">
-                Feature Icon
-                <input type="file" name="feature-img" id="feature-img" />
-                (Only SVG or PNG files)
-              </label>
-              <br />
-            </div>
-          </div>
-
-          <button className="btn">Submit</button>
-        </Form>
+        <PostForm isSubmitting={isSubmitting} errors={errors} />
       ) : null}
     </>
   );
 }
+
+function loader({ request: { signal } }) {
+  return getShop({ signal });
+}
+
+async function action({ request }) {
+  const formData = await request.formData();
+  const title = formData.get("title");
+  const desc = formData.get("description");
+  const actual = formData.get("actualPrice");
+  const sale = formData.get("salePrice");
+  const length = formData.get("length");
+  const width = formData.get("width");
+  const height = formData.get("height");
+  const ftitle = formData.get("feature-title");
+  const fdesc = formData.get("feature-title");
+  const fimg = formData.get("feature-img");
+
+  const errors = postFormValidator({
+    title,
+    desc,
+    actual,
+    sale,
+    fimg,
+    ftitle,
+    fdesc,
+    length,
+    width,
+    height,
+  });
+
+  if (Object.keys(errors).length > 0) {
+    return errors;
+  }
+
+  const shop = await createItem(
+    {
+      title,
+      desc,
+      actual,
+      sale,
+      length,
+      width,
+      height,
+      fimg,
+      ftitle,
+      fdesc,
+    },
+    { signal: request.signal }
+  );
+
+  return redirect(`/shop/${shop.id}`);
+}
+
+export const newItem = {
+  loader,
+  action,
+  element: <PostItem />,
+};
