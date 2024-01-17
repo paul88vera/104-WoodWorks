@@ -135,7 +135,7 @@ export default function PostForm({ isSubmitting, errors = {} }) {
   );
 }
 
-export function postFormValidator({ title, desc, actual, sale, colorOne }) {
+export function postFormValidator({ title, desc, actual, sale, colorOne, colorTwo, colorThree }) {
   const errors = {};
 
   if (title === "") {
@@ -152,6 +152,12 @@ export function postFormValidator({ title, desc, actual, sale, colorOne }) {
   }
   if (colorOne === "") {
     errors.colorOne = "Required";
+  }
+  if (colorTwo === "") {
+    errors.colorTwo = "Required";
+  }
+  if (colorThree === "") {
+    errors.colorThree = "Required";
   }
 
   return errors;

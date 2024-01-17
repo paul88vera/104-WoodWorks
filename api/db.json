@@ -75,6 +75,35 @@
       "ftitle": "Wooden Thing P2",
       "fdesc": "Wooden Thing P2",
       "id": 7
+    },
+    {
+      "title": "newest",
+      "desc": "newest",
+      "actual": "400",
+      "sale": "300",
+      "length": "20",
+      "width": "20",
+      "height": "20",
+      "fimg": "",
+      "ftitle": "sq newest",
+      "fdesc": "sq newest",
+      "id": 8
+    },
+    {
+      "title": "the one",
+      "desc": "the one",
+      "actual": "100",
+      "sale": "50",
+      "length": "20",
+      "width": "20",
+      "height": "20",
+      "fimg": "",
+      "ftitle": "the one",
+      "fdesc": "the one",
+      "c1": "#b36565",
+      "c2": "#26566e",
+      "c3": "#297f2b",
+      "id": 9
     }
   ]
 }
