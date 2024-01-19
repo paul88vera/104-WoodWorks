@@ -7,9 +7,10 @@ import { ShopRoute } from "./pages/Shop";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
-import {shopItem} from "./pages/ShopItem";
+import { shopItem } from "./pages/ShopItem";
 import Profile from "./pages/Profile";
 import { newItem } from "./pages/PostItem";
+import { editItem } from "./pages/EditItem";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +26,13 @@ export const router = createBrowserRouter([
             path: "shop",
             children: [
               { index: true, ...ShopRoute },
-              { path: ":id", ...shopItem },
+              {
+                path: ":id",
+                children: [
+                  { index: true, ...shopItem },
+                  { path: "edit", ...editItem },
+                ],
+              },
             ],
           },
           { path: "about", element: <About /> },

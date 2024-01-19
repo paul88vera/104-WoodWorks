@@ -1,10 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
 
 export default function ShopItem() {
   const item = useLoaderData();
+
   return (
     <div className="item-container">
+      <div>
+        <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
+          Edit
+        </Link>
+      </div>
       <img src={item.fimg} />
       <div className="descriptions">
         <h2>{item.title}</h2>
@@ -14,15 +20,15 @@ export default function ShopItem() {
         <br />
         <div>
           <h5>Colors:</h5>
-          {item.c1 ? (
+          {item.c1 != "" ? (
             <input type="color" name="c1" id="c1" value={item.c1} disabled />
           ) : null}
           <br />
-          {item.c2 ? (
+          {item.c2 != "" ? (
             <input type="color" name="c2" id="c2" value={item.c2} disabled />
           ) : null}
           <br />
-          {item.c3 ? (
+          {item.c3 != "" ? (
             <input type="color" name="c3" id="c3" value={item.c3} disabled />
           ) : null}
         </div>

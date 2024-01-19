@@ -1,5 +1,4 @@
 import { Link, useLoaderData } from "react-router-dom";
-// import axios from "axios";
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { getShop } from "../api/shop";
