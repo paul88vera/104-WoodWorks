@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Paul Vera",
+      "type": "administrator",
+      "special": "developer"
+    },
+    {
+      "id": 2,
+      "name": "Other User",
+      "type": "administrator",
+      "special": "none"
+    }
+  ],
+  "shop": [
+    {
+      "title": "Dog Kennel",
+      "desc": "Dog Kennel w TV stand",
+      "actual": "600",
+      "sale": "500",
+      "length": "60",
+      "width": "30",
+      "height": "32",
+      "fimg": "",
+      "ftitle": "DOG KENNEL",
+      "fdesc": "DOG KENNEL",
+      "c1": "#ffffff",
+      "c2": "#5f4816",
+      "c3": "#281b10",
+      "id": 1
+    }
+  ]
+}
