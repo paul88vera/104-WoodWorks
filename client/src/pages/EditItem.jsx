@@ -26,7 +26,10 @@ export default function EditItem() {
   return (
     <div>
       {deleteModal && (
-        <DeleteModal toggleDeleteModalClose={toggleDeleteModalClose} />
+        <DeleteModal
+          item={item}
+          toggleDeleteModalClose={toggleDeleteModalClose}
+        />
       )}
       <button className="btn" onClick={toggleDeleteModalOpen}>
         Delete

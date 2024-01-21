@@ -16,8 +16,8 @@ export function updateItem(id, data, options) {
   return baseApi.put(`shop/${id}`, data, options).then((res) => res.data);
 }
 
-export function deleteItem(id, data, options) {
-  return baseApi.delete(`shop/${id}`, data, options).then((res) => {
-    res.data;
+export function deleteItem(id) {
+  return baseApi.delete(`shop/${id}`, { method: "DELETE" }).then(() => {
+    window.location.replace("/shop");
   });
 }

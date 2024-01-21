@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { deleteItem } from "../api/shop";
 
-export default function DeleteModal({ toggleDeleteModalClose }) {
+export default function DeleteModal({ item, toggleDeleteModalClose }) {
   return (
     <div
       className="shop-modal"
@@ -17,7 +17,7 @@ export default function DeleteModal({ toggleDeleteModalClose }) {
           margin: "1em",
           gap: "1em",
         }}>
-        <button className="btn" onSubmit={deleteItem}>
+        <button className="btn" onClick={() => deleteItem(item.id)}>
           Yes
         </button>
         <button className="btn submit-btn" onClick={toggleDeleteModalClose}>

@@ -22,15 +22,15 @@ export default function ShopItem() {
           <h5>Colors:</h5>
           {item.c1 != "" ? (
             <input type="color" name="c1" id="c1" value={item.c1} disabled />
-          ) : null}
+          ) : undefined}
           <br />
           {item.c2 != "" ? (
             <input type="color" name="c2" id="c2" value={item.c2} disabled />
-          ) : null}
+          ) : undefined}
           <br />
           {item.c3 != "" ? (
             <input type="color" name="c3" id="c3" value={item.c3} disabled />
-          ) : null}
+          ) : undefined}
         </div>
         <br />
 
@@ -38,15 +38,15 @@ export default function ShopItem() {
           <h5>Finishes:</h5>
           {item.f1 != "" ? (
             <input type="color" name="f1" id="f1" value={item.f1} disabled />
-          ) : null}
+          ) : undefined}
           <br />
           {item.f2 != "" ? (
             <input type="color" name="f2" id="f2" value={item.f2} disabled />
-          ) : null}
+          ) : undefined}
           <br />
           {item.f3 != "" ? (
             <input type="color" name="f3" id="f3" value={item.f3} disabled />
-          ) : null}
+          ) : undefined}
         </div>
 
         <br />
