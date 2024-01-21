@@ -15,51 +15,42 @@
   ],
   "shop": [
     {
-      "title": "updated",
-      "desc": "updated",
-      "actual": "20",
-      "sale": "800",
-      "length": "50",
-      "width": "50",
-      "height": "50",
-      "fimg": "",
-      "ftitle": "updateds",
-      "fdesc": "updateds",
-      "c1": "#000000",
-      "c2": "#923f3f",
-      "c3": "#ff0000",
-      "f1": "on",
-      "f2": "on",
-      "f3": "on",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "title": "item 2",
-      "img": "fdsa",
-      "actual": "$250",
-      "sale": "$150"
-    },
-    {
-      "id": 3,
       "title": "item 3",
-      "img": "fdsa",
-      "actual": "$350",
-      "sale": "$250"
+      "desc": "item",
+      "actual": "32",
+      "sale": "42",
+      "length": "32",
+      "width": "242",
+      "height": "52",
+      "fimg": "",
+      "ftitle": "fdsafdsafdsafd",
+      "fdesc": "fdsafdsafdsafd",
+      "c1": "#000000",
+      "c2": "#000000",
+      "c3": "#000000",
+      "f1": "#000000",
+      "f2": "#000000",
+      "f3": "#000000",
+      "id": 3
     },
     {
-      "id": 4,
-      "title": "item 4",
-      "img": "fdsa",
-      "actual": "$450",
-      "sale": "$350"
-    },
-    {
-      "id": 5,
       "title": "item 5",
-      "img": "fdsa",
-      "actual": "$550",
-      "sale": "$450"
+      "desc": "gfdsgf",
+      "actual": "234",
+      "sale": "5432",
+      "length": "432",
+      "width": "5432",
+      "height": "5432",
+      "fimg": "",
+      "ftitle": "gfdsg",
+      "fdesc": "gfdsg",
+      "c1": "#792a2a",
+      "c2": "#e26060",
+      "c3": "#dfc8c8",
+      "f1": null,
+      "f2": null,
+      "f3": null,
+      "id": 5
     },
     {
       "itemId": null,
@@ -89,21 +80,6 @@
       "id": 7
     },
     {
-      "title": "Updated Title",
-      "desc": "updated desc",
-      "actual": "100000",
-      "sale": "50000",
-      "fimg": "",
-      "ftitle": "updated Title",
-      "fdesc": "updated Title",
-      "length": "50",
-      "width": "50",
-      "height": "50",
-      "c1": "#000000",
-      "f1": null,
-      "id": 8
-    },
-    {
       "title": "the one",
       "desc": "the one",
       "actual": "100",
@@ -115,7 +91,11 @@
       "ftitle": "the one",
       "fdesc": "the one",
       "c1": "#000000",
-      "f1": null,
+      "c2": "#000000",
+      "c3": "#000000",
+      "f1": "#000000",
+      "f2": "#000000",
+      "f3": "#000000",
       "id": 9
     }
   ]

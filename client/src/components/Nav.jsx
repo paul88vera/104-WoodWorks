@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
-import { FaUserCircle } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { CgProfile } from "react-icons/cg";
+import { FaLinesLeaning } from "react-icons/fa6";
+import { MdOutlineAddBox } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import { BsBoxSeam } from "react-icons/bs";
+import { FaWind } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 
 export default function Nav() {
@@ -13,6 +17,7 @@ export default function Nav() {
       setIsMobile(true);
     } else {
       setIsMobile(false);
+      setOpenMobile(false);
     }
   };
 
@@ -22,8 +27,24 @@ export default function Nav() {
 
   return (
     <>
-      <div className="top-banner">Clearance {">"} Item Slider</div>
+      <div className="top-banner">
+        <FaWind
+          style={{
+            rotate: "180deg",
+            marginRight: "-.4rem",
+            marginTop: ".4rem",
+            fontSize: ".7rem",
+          }}
+        />
+        <BsBoxSeam />
+        <p>Free shipping on all orders!</p>
+      </div>
       <ul id="nav-container">
+        {openMobile ? (
+          <div>
+            <IoMdClose onClick={() => setOpenMobile((current) => !current)} />
+          </div>
+        ) : null}
         {isMobile ? (
           <>
             <div
@@ -31,27 +52,21 @@ export default function Nav() {
               onClick={() => {
                 setOpenMobile((current) => !current);
               }}>
-              <GiHamburgerMenu />
+              {!openMobile ? <FaLinesLeaning /> : null}
               <div
                 className={`mobileNav ${openMobile ? "appear" : "no-display"}`}>
                 <Link to="/" className="mobile-links">
-                  Kennels
+                  Home
                 </Link>
 
                 <Link to="/shop" className="mobile-links">
-                  Tables
+                  Shop
                 </Link>
 
-                <Link to="/about" className="mobile-links">
-                  Furniture
-                </Link>
-
-                <Link to="/misc" className="mobile-links">
-                  Miscelaneous
-                </Link>
                 <Link to="/about" className="mobile-links">
                   About
                 </Link>
+
                 <Link to="/contact" className="mobile-links">
                   Contact
                 </Link>
@@ -59,8 +74,13 @@ export default function Nav() {
             </div>
             <div className="cart-icon-section">
               <li>
+                <Link to="/add">
+                  <MdOutlineAddBox />
+                </Link>
+              </li>
+              <li>
                 <Link to="/profile">
-                  <FaUserCircle />
+                  <CgProfile />
                 </Link>
               </li>
               <li>
@@ -88,11 +108,13 @@ export default function Nav() {
             </div>
             <div className="cart-icon-section">
               <li>
-                <Link to="/add">Add New</Link>
+                <Link to="/add">
+                  <MdOutlineAddBox />
+                </Link>
               </li>
               <li>
                 <Link to="/profile">
-                  <FaUserCircle />
+                  <CgProfile />
                 </Link>
               </li>
               <li>

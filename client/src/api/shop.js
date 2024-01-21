@@ -15,3 +15,9 @@ export function createItem(data, options) {
 export function updateItem(id, data, options) {
   return baseApi.put(`shop/${id}`, data, options).then((res) => res.data);
 }
+
+export function deleteItem(id, data, options) {
+  return baseApi.delete(`shop/${id}`, data, options).then((res) => {
+    res.data;
+  });
+}

@@ -33,22 +33,22 @@ export default function ShopItem() {
           ) : null}
         </div>
         <br />
-        {item.f1 === "" || item.f2 === "" || item.f3 === "" ? (
-          <div>
-            <h5>Finishes:</h5>
-            {item.f1 ? (
-              <input type="color" name="f1" id="f1" value={item.f1} disabled />
-            ) : null}
-            <br />
-            {item.f2 ? (
-              <input type="color" name="f2" id="f2" value={item.f2} disabled />
-            ) : null}
-            <br />
-            {item.f3 ? (
-              <input type="color" name="f3" id="f3" value={item.f3} disabled />
-            ) : null}
-          </div>
-        ) : null}
+
+        <div>
+          <h5>Finishes:</h5>
+          {item.f1 != "" ? (
+            <input type="color" name="f1" id="f1" value={item.f1} disabled />
+          ) : null}
+          <br />
+          {item.f2 != "" ? (
+            <input type="color" name="f2" id="f2" value={item.f2} disabled />
+          ) : null}
+          <br />
+          {item.f3 != "" ? (
+            <input type="color" name="f3" id="f3" value={item.f3} disabled />
+          ) : null}
+        </div>
+
         <br />
         <h5>Description:</h5>
         <p>{item.desc}</p>

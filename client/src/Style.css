@@ -1,12 +1,19 @@
-/* ROOT */
+/*-------------
+    ROOT 
+-------------*/
 :root {
-  --main-bg: rgb(4, 54, 192);
-  --secondary-bg: rgb(172, 172, 172);
-  --text-color: rgb(39, 39, 39);
-  --text-secondary-color: rgb(255, 255, 255);
+  --main-bg: rgb(255, 255, 255);
+  /* --secondary-bg: rgb(41, 82, 197); */
+  --secondary-bg: #f4efe9;
+  --tritary-bg: #383633;
+  --text-color: #383633;
+  --text-secondary-color: #ffffff;
   --accent-color: rgb(52, 117, 215);
 }
 
+/*-----------------
+      Globals  
+------------------*/
 * {
   padding: 0;
   margin: 0;
@@ -15,35 +22,47 @@
 }
 .container {
   padding: 1em;
+  background-color: var(--main-bg);
+  font-size: 1rem;
+  font-weight: 400;
 }
 .btn {
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 1rem;
   max-width: 150px;
   width: 100%;
   font-size: 1rem;
   outline: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   text-decoration: none;
   color: var(--accent-color);
   cursor: pointer;
 }
 .submit-btn {
-  background-color: var(--main-bg);
+  background-color: var(--tritary-bg);
   color: var(--text-secondary-color);
-  margin: 1em;
   padding: 0.5em 1em;
   border-radius: 5px;
   cursor: pointer;
 }
-.submit-btn:hover {
-  background-color: var(--text-color);
+.submit-btn:hover,
+.btn:hover {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
 }
 .error-message {
   margin: 0.2em 0;
   color: red;
 }
-/* Loading Spinner */
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1em;
+}
+/*------------------
+  Loading Spinner 
+ ------------------*/
 .container.loading {
   filter: blur(5px);
   pointer-events: none;
@@ -86,7 +105,9 @@
   }
 }
 
-/* NAVIGATION */
+/*--------------------
+     NAVIGATION 
+---------------------*/
 #nav-container {
   display: flex;
   flex-direction: row;
@@ -94,12 +115,11 @@
   align-items: center;
   height: 8vh;
   padding: 1em;
-  background-color: var(--text-secondary-color);
+  background-color: var(--main-bg);
   position: sticky;
   width: 100%;
   box-sizing: border-box;
   z-index: 9999;
-  font-size: 1.2rem;
 }
 .nav-link-container,
 .cart-icon-section {
@@ -114,41 +134,51 @@
   color: var(--text-color);
   text-decoration: none;
 }
+
+.nav-link-container a:hover,
+.cart-icon-section a:hover {
+  color: var(--accent-color);
+}
+
 .top-banner {
   display: flex;
+  flex-direction: row;
+  gap: 0.5em;
   justify-content: center;
   align-items: center;
-  background-color: var(--main-bg);
-  color: var(--text-secondary-color);
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
   height: 5svh;
-  font-size: 1rem;
   position: relative;
   top: 0;
   z-index: 9999;
   width: 100%;
+  font-weight: 100;
 }
 
-/* MOBILE NAV  */
+/*-----------------------
+        MOBILE NAV  
+ -----------------------*/
 .burger {
   color: var(--text-color);
 }
 .mobileNav {
   display: flex;
   flex-direction: column;
-  background-color: var(--text-secondary-color);
-  position: fixed;
+  background-color: var(--secondary-bg);
+  position: absolute;
   top: 4rem;
   left: 0;
   width: 100%;
   max-width: 100vw;
-  height: 300px;
+  height: auto;
   color: var(--text-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.361);
 }
 .mobile-links {
   text-decoration: none;
   color: var(--text-color);
-  background-color: var(--text-secondary-color);
+  background-color: var(--secondary-bg);
   padding: 1em;
   border-bottom: 1px solid rgba(135, 135, 135, 0.493);
 }
@@ -165,44 +195,60 @@
   display: none;
 }
 
-/* SHOP CARDS */
+/*----------------
+    SHOP CARDS 
+-----------------*/
+
 .shop-grid {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 1em;
-  padding: 1em;
-  margin-left: 13em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
+
 .shop-card {
-  max-width: 275px;
-  background-color: rgb(38, 38, 38);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  background-color: var(--main-bg);
   padding: 1em;
-  border-radius: 10px;
-  color: aliceblue;
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.2em;
+  font-weight: 100;
+  text-decoration: none;
+  position: relative;
 }
 .card-img {
-  height: 275px;
-  width: 275px;
+  margin-bottom: 0.5em;
+  object-fit: cover;
 }
 .card-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1rem;
+}
+.price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 .card-price {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.shop-btn-container {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  justify-content: space-around;
-  margin-top: 0.5em;
+.card-actual-price {
+  text-decoration: line-through;
+  color: rgb(168, 168, 168);
+  font-weight: 100;
+}
+.shop-details-container {
+  position: relative;
+  width: 100%;
+  right: 0;
 }
 .shop-modal {
-  z-index: 99;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,9 +258,25 @@
   position: fixed;
   top: 0;
   left: 0;
-  color: white;
+  color: var(--text-secondary-color);
 }
-/* SHOP SIDEBAR */
+
+@media screen and (min-width: 640px) {
+  .shop-grid {
+    display: grid;
+    grid-gap: 1.6rem;
+    max-width: 1440px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    flex-basis: 1;
+    padding: 0 1em;
+  }
+  .shop-card {
+    grid-column: span 4;
+  }
+}
+/*----------------------
+     SHOP SIDEBAR 
+-----------------------*/
 .sidebar-container {
   display: flex;
   flex-direction: column;
@@ -227,8 +289,7 @@
   height: 100svh;
   max-width: 180px;
   width: 100%;
-  background-color: var(--text-secondary-color);
-  box-shadow: 1px 1px 10px var(--text-color);
+  background-color: var(--main-bg);
   text-align: left;
   z-index: 0;
 }

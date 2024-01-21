@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import FormGroup from "./FormGroup";
 
 // eslint-disable-next-line react/prop-types
@@ -97,7 +97,7 @@ export default function PostForm({
           <label htmlFor="finishOne">
             Finish One{" "}
             <input
-              type="checkbox"
+              type="color"
               name="finishOne"
               defaultValue={defaultValues.f1}
             />
@@ -108,7 +108,7 @@ export default function PostForm({
           <label htmlFor="finishTwo">
             Finish Two{" "}
             <input
-              type="checkbox"
+              type="color"
               name="finishTwo"
               defaultValue={defaultValues.f2}
             />
@@ -119,7 +119,7 @@ export default function PostForm({
           <label htmlFor="finishThree">
             Finish Three{" "}
             <input
-              type="checkbox"
+              type="color"
               name="finishThree"
               defaultValue={defaultValues.f3}
             />
@@ -210,10 +210,14 @@ export default function PostForm({
         </FormGroup>
         <br />
       </div>
-
-      <button className="btn submit-btn" disabled={isSubmitting}>
-        {isSubmitting ? "Loading" : "Save"}
-      </button>
+      <div>
+        <Link className="btn" to="/shop">
+          Cancel
+        </Link>
+        <button className="btn submit-btn" disabled={isSubmitting}>
+          {isSubmitting ? "Loading" : "Save"}
+        </button>
+      </div>
     </Form>
   );
 }

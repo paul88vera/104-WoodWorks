@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import PostForm, { postFormValidator } from "../components/PostForm";
 import { getShopItem, updateItem } from "../api/shop";
+import { useState } from "react";
+import DeleteModal from "../components/DeleteModal";
 
 export default function EditItem() {
   const item = useLoaderData();
@@ -13,8 +15,22 @@ export default function EditItem() {
   const { state } = useNavigation();
 
   const isSubmitting = state === "submitting";
+  const [deleteModal, setDeleteModal] = useState(false);
+
+  function toggleDeleteModalOpen() {
+    setDeleteModal((current) => !current);
+  }
+  function toggleDeleteModalClose() {
+    setDeleteModal((current) => !current);
+  }
   return (
     <div>
+      {deleteModal && (
+        <DeleteModal toggleDeleteModalClose={toggleDeleteModalClose} />
+      )}
+      <button className="btn" onClick={toggleDeleteModalOpen}>
+        Delete
+      </button>
       <PostForm
         defaultValues={item}
         isSubmitting={isSubmitting}
