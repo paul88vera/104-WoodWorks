@@ -21,10 +21,9 @@
   font-family: "Poppins", sans-serif;
 }
 .container {
-  padding: 1em;
   background-color: var(--main-bg);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 100;
 }
 .btn {
   padding: 0.5rem 1rem;
@@ -59,6 +58,12 @@
   font-size: 1.5rem;
   font-weight: 500;
   padding: 1em;
+}
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 200;
+  padding: 0.5em;
+  text-align: center;
 }
 /*------------------
   Loading Spinner 
@@ -292,4 +297,43 @@
   background-color: var(--main-bg);
   text-align: left;
   z-index: 0;
+}
+
+/*-----------------------
+    CONTRAST SECTION
+-------------------------*/
+.contrast-section {
+  background-color: var(--secondary-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2em;
+  padding: 4em 1em;
+}
+.block-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.block-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  max-width: 400px;
+}
+.inner-block-container p {
+  font-size: 0.8rem;
+}
+.inner-block-title {
+  font-weight: 500;
+  font-size: 1rem;
 }
