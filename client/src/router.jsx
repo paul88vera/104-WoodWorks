@@ -11,6 +11,8 @@ import { shopItem } from "./pages/ShopItem";
 import Profile from "./pages/Profile";
 import { newItem } from "./pages/PostItem";
 import { editItem } from "./pages/EditItem";
+// import AuthenticateContext from "./api/AuthContext";
+import LoginComponent from "./pages/Login";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +32,10 @@ export const router = createBrowserRouter([
                 path: ":id",
                 children: [
                   { index: true, ...shopItem },
-                  { path: "edit", ...editItem },
+                  {
+                    path: "edit",
+                    ...editItem,
+                  },
                 ],
               },
             ],
@@ -38,8 +43,12 @@ export const router = createBrowserRouter([
           { path: "about", element: <About /> },
           { path: "contact", element: <Contact /> },
           { path: "cart", element: <Cart /> },
-          { path: "profile", element: <Profile /> },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
           { path: "add", ...newItem },
+          { path: "login", element: <LoginComponent /> },
           { path: "*", element: <Error /> },
         ],
       },

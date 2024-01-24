@@ -74,7 +74,7 @@ export default function Nav() {
             </div>
             <div className="cart-icon-section">
               <li>
-                <Link to="/add">
+                <Link to="/login">
                   <MdOutlineAddBox />
                 </Link>
               </li>
