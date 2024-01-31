@@ -1,19 +1,25 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { getShop } from "../api/shop";
+import Images from "../constants/index";
+import HeroBanner from "../components/HeroBanner";
 
 export default function Shop() {
   const shop = useLoaderData();
 
   return (
     <>
-      <h1 className="page-title">Shop 10-4ww</h1>
+      <HeroBanner>
+        <img src={Images.shop} alt="hero" width="100%" />
+      </HeroBanner>
+
+      <h1 className="section-title">Shop 10-4 Woodworks</h1>
       <div className="shop-grid">
         {shop.map((data) => (
           <Link to={`/shop/${data.id}`} className="shop-card" key={data.id}>
             <div className="card-img">
-              <img src="/wooden-chair.jpg" alt="item" width="100%" />
+              <img src={Images.chair} alt="item" width="100%" />
+              <div className="card-title">{data.title}</div>
             </div>
-            <div className="card-title">{data.title}</div>
             <div className="price-container">
               <div className="card-sale-price">${data.sale}</div>
               <div className="card-actual-price">was ${data.actual}</div>

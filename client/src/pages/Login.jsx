@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 // import { login } from "../api/authService";
 
 const LoginComponent = () => {
@@ -16,31 +17,41 @@ const LoginComponent = () => {
   //   }
   // };
 
-  return (
-    <div className="login-bg">
+  return createPortal(
+    <div id="login-bg">
       <div className="login-container">
-        <input
-          type="text"
-          name="username"
-          id="username"
-          className="input"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="text"
-          name="password"
-          id="password"
-          className="input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="btn submit-btn">Login</button>
+        <h3>Admin Only</h3>
+        <label htmlFor="username">
+          Username
+          <br />
+          <input
+            type="text"
+            name="username"
+            id="username"
+            className="input"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+        <label htmlFor="password">
+          Password
+          <br />
+          <input
+            type="text"
+            name="password"
+            id="password"
+            className="input"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <button className="btn login-btn">Login</button>
         {/* <button className="btn submit-btn" onClick={handleLogin}>
           Login
         </button> */}
       </div>
-    </div>
+    </div>,
+    document.getElementById("alert-message")
   );
 };
 

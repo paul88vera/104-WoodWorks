@@ -1,54 +1,41 @@
-import { CiDeliveryTruck } from "react-icons/ci";
-import { MdOutlineTableBar } from "react-icons/md";
-import { BsTree } from "react-icons/bs";
+import HeroBanner from "../components/HeroBanner";
+import Images from "../constants/index";
+import { Link, useLoaderData } from "react-router-dom";
+import { getShop } from "../api/shop";
+import ContrastSection from "../components/ContrastSection";
 
 export default function Home() {
+  const shop = useLoaderData();
+
   return (
     <>
-      <div className="hero-container">
-        <img src="#" alt="hero" />
+      <HeroBanner>
+        <img src={Images.hero} alt="hero" width="100%" />
+      </HeroBanner>
+
+      <div className="section-title">Design deals, delivered free</div>
+      {/* TURN INTO A PROP vvvv */}
+      <div className="shop-grid fav-grid">
+        {shop.map((favs) => (
+          <Link to={`/shop/${favs.id}`} className="shop-card" key={favs.id}>
+            <div className="card-img">
+              <img src={Images.chair} alt="item" width="100%" />
+            </div>
+            <div className="fav-card-title">{favs.title}</div>
+          </Link>
+        ))}
       </div>
-
-      <div className="header-title">Design deals, delivered free</div>
-
-      <div className="contrast-section">
-        <h2 className="section-title">
-          We&apos;re solving the biggest problems in furniture
-        </h2>
-
-        <div className="block-main-container">
-          <div className="block-container">
-            <CiDeliveryTruck style={{ fontSize: "78px" }} />
-            <div className="inner-block-container">
-              <p className="inner-block-title">Fast & free shipping</p>
-              <p>
-                Every single order ships for free. No minimums, no tiers, no
-                fine print whatsoever.
-              </p>
-            </div>
-          </div>
-          <div className="block-container">
-            <MdOutlineTableBar style={{ fontSize: "100px" }} />
-            <div className="inner-block-container">
-              <p className="inner-block-title">Modular, easy-to-move design</p>
-              <p>
-                Our innovative modular design is driven by the belief that
-                furniture should fit this home, and the next one.
-              </p>
-            </div>
-          </div>
-          <div className="block-container">
-            <BsTree style={{ fontSize: "100px" }} />
-            <div className="inner-block-container">
-              <p className="inner-block-title">Durable, premium materials</p>
-              <p>
-                We use materials like sustainably-forested wood, strengthened
-                steel hardware, and top-grain Italian leather.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* TURN INTO A PROP ^^^^ */}
+      <ContrastSection />
     </>
   );
 }
+
+function loader({ request: { signal } }) {
+  return getShop({ signal });
+}
+
+export const homeData = {
+  loader,
+  element: <Home />,
+};
