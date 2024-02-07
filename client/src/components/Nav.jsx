@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
-import { TiShoppingCart } from "react-icons/ti";
-import { CgProfile } from "react-icons/cg";
+import { BiCart } from "react-icons/bi";
+import { LuUser2 } from "react-icons/lu";
 import { FaLinesLeaning } from "react-icons/fa6";
-import { MdOutlineAddBox } from "react-icons/md";
+import { IoAddOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaWind } from "react-icons/fa6";
+import { IoSearchOutline } from "react-icons/io5";
+
 import { useEffect, useState } from "react";
 
 export default function Nav() {
   const [isMobile, setIsMobile] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
+  const [isSignedIn] = useState(false);
 
   const MobileNav = () => {
     if (window.innerWidth <= 568) {
@@ -32,7 +35,7 @@ export default function Nav() {
           style={{
             rotate: "180deg",
             marginRight: "-.4rem",
-            marginTop: ".4rem",
+            marginTop: ".2rem",
             fontSize: ".7rem",
           }}
         />
@@ -42,7 +45,10 @@ export default function Nav() {
       <ul id="nav-container">
         {openMobile ? (
           <div>
-            <IoMdClose onClick={() => setOpenMobile((current) => !current)} />
+            <IoMdClose
+              style={{ fontSize: "1.5rem", cursor: "pointer" }}
+              onClick={() => setOpenMobile((current) => !current)}
+            />
           </div>
         ) : null}
         {isMobile ? (
@@ -72,26 +78,41 @@ export default function Nav() {
                 </Link>
               </div>
             </div>
+            <div className="logo">
+              <Link to="/">10-4 WoodWorks</Link>
+            </div>
             <div className="cart-icon-section">
+              {isSignedIn && (
+                <li>
+                  <Link to="/login" className="icon-links">
+                    <IoAddOutline />
+                  </Link>
+                </li>
+              )}
               <li>
-                <Link to="/add">
-                  <MdOutlineAddBox />
+                <Link to="/login" className="icon-links">
+                  <IoSearchOutline />
                 </Link>
               </li>
               <li>
-                <Link to="/profile">
-                  <CgProfile />
+                <Link
+                  to={isSignedIn ? "/profile" : "/login"}
+                  className="icon-links">
+                  <LuUser2 />
                 </Link>
               </li>
               <li>
-                <Link to="/cart">
-                  <TiShoppingCart />
+                <Link to="/cart" className="icon-links">
+                  <BiCart />
                 </Link>
               </li>
             </div>
           </>
         ) : (
           <>
+            <div className="logo">
+              <Link to="/">10-4 WoodWorks</Link>
+            </div>
             <div className="nav-link-container">
               <li>
                 <Link to="/">Home</Link>
@@ -107,19 +128,28 @@ export default function Nav() {
               </li>
             </div>
             <div className="cart-icon-section">
+              {isSignedIn && (
+                <li>
+                  <Link to="/login" className="icon-links">
+                    <IoAddOutline />
+                  </Link>
+                </li>
+              )}
               <li>
-                <Link to="/add">
-                  <MdOutlineAddBox />
+                <Link to="/login" className="icon-links">
+                  <IoSearchOutline />
                 </Link>
               </li>
               <li>
-                <Link to="/profile">
-                  <CgProfile />
+                <Link
+                  to={isSignedIn ? "/profile" : "/login"}
+                  className="icon-links">
+                  <LuUser2 />
                 </Link>
               </li>
               <li>
-                <Link to="/cart">
-                  <TiShoppingCart />
+                <Link to="/cart" className="icon-links">
+                  <BiCart />
                 </Link>
               </li>
             </div>

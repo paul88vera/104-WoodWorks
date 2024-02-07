@@ -11,7 +11,7 @@ export default function ShopItem() {
           Edit
         </Link>
       </div>
-      <img src={item.fimg} />
+      <img src="/wooden_chair.jpg" width="30%" />
       <div className="descriptions">
         <h2>{item.title}</h2>
         <p>

@@ -1,3 +1,7 @@
 export default function Profile() {
-  return <div>Profile</div>;
+  return (
+    <>
+      <h1 className="section-title">Profile</h1>
+    </>
+  );
 }
