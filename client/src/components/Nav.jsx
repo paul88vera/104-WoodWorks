@@ -35,7 +35,7 @@ export default function Nav() {
           style={{
             rotate: "180deg",
             marginRight: "-.4rem",
-            marginTop: ".4rem",
+            marginTop: ".2rem",
             fontSize: ".7rem",
           }}
         />
@@ -45,7 +45,10 @@ export default function Nav() {
       <ul id="nav-container">
         {openMobile ? (
           <div>
-            <IoMdClose onClick={() => setOpenMobile((current) => !current)} />
+            <IoMdClose
+              style={{ fontSize: "1.5rem", cursor: "pointer" }}
+              onClick={() => setOpenMobile((current) => !current)}
+            />
           </div>
         ) : null}
         {isMobile ? (
@@ -74,6 +77,9 @@ export default function Nav() {
                   Contact
                 </Link>
               </div>
+            </div>
+            <div className="logo">
+              <Link to="/">10-4 WoodWorks</Link>
             </div>
             <div className="cart-icon-section">
               {isSignedIn && (
@@ -104,6 +110,9 @@ export default function Nav() {
           </>
         ) : (
           <>
+            <div className="logo">
+              <Link to="/">10-4 WoodWorks</Link>
+            </div>
             <div className="nav-link-container">
               <li>
                 <Link to="/">Home</Link>

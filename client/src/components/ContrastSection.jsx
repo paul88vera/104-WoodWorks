@@ -11,7 +11,12 @@ export default function ContrastSection() {
 
       <div className="block-main-container">
         <div className="block-container">
-          <CiDeliveryTruck style={{ fontSize: "78px" }} />
+          <div>
+            <CiDeliveryTruck
+              className="icon-sizer"
+              // style={{ marginRight: "-10px" }}
+            />
+          </div>
           <div className="inner-block-container">
             <p className="inner-block-title">Fast & free shipping</p>
             <p>
@@ -22,7 +27,9 @@ export default function ContrastSection() {
         </div>
 
         <div className="block-container">
-          <MdOutlineTableBar style={{ fontSize: "100px" }} />
+          <div>
+            <MdOutlineTableBar className="icon-sizer" />
+          </div>
           <div className="inner-block-container">
             <p className="inner-block-title">Modular, easy-to-move design</p>
             <p>
@@ -33,7 +40,9 @@ export default function ContrastSection() {
         </div>
 
         <div className="block-container">
-          <BsTree style={{ fontSize: "100px" }} />
+          <div>
+            <BsTree className="icon-sizer" />
+          </div>
           <div className="inner-block-container">
             <p className="inner-block-title">Durable, premium materials</p>
             <p>
