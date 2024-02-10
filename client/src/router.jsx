@@ -1,18 +1,16 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import { homeData } from "./pages/Home";
+import Profile from "./pages/Profile";
 import Error from "./pages/Error";
 import ErrorMessage from "./pages/ErrorMessage";
-import { ShopRoute } from "./pages/Shop";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import { ShopRoute } from "./pages/Shop";
+import { homeData } from "./pages/Home";
 import { cartData } from "./pages/Cart";
 import { shopItem } from "./pages/ShopItem";
-import Profile from "./pages/Profile";
 import { newItem } from "./pages/PostItem";
 import { editItem } from "./pages/EditItem";
-// import AuthenticateContext from "./api/AuthContext";
-import LoginComponent from "./pages/Login";
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +29,10 @@ export const router = createBrowserRouter([
               {
                 path: ":id",
                 children: [
-                  { index: true, ...shopItem },
+                  {
+                    index: true,
+                    ...shopItem,
+                  },
                   {
                     path: "edit",
                     ...editItem,
@@ -42,13 +43,15 @@ export const router = createBrowserRouter([
           },
           { path: "about", element: <About /> },
           { path: "contact", element: <Contact /> },
-          { path: "cart", ...cartData },
+          {
+            path: "cart",
+            ...cartData,
+          },
           {
             path: "profile",
             element: <Profile />,
           },
           { path: "add", ...newItem },
-          { path: "login", element: <LoginComponent /> },
           { path: "*", element: <Error /> },
         ],
       },

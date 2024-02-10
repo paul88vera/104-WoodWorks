@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
+import { SignedIn } from "@clerk/clerk-react";
 
 export default function ShopItem() {
   const item = useLoaderData();
@@ -7,9 +8,11 @@ export default function ShopItem() {
   return (
     <div className="item-container">
       <div>
-        <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
-          Edit
-        </Link>
+        <SignedIn>
+          <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
+            Edit
+          </Link>
+        </SignedIn>
       </div>
       <img src="/wooden_chair.jpg" width="30%" />
       <div className="descriptions">

@@ -136,6 +136,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  align-items: center;
   gap: 1em;
   list-style-type: none;
 }
@@ -168,7 +169,17 @@ a:hover {
   width: 100%;
   font-weight: 100;
 }
-
+.banner-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+.auth-btn-container {
+  position: absolute;
+  right: 10px;
+}
 /*-----------------------
         MOBILE NAV  
  -----------------------*/
@@ -266,6 +277,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  padding-bottom: 2em;
 }
 
 .shop-card {
@@ -294,6 +306,7 @@ a:hover {
   flex-direction: row;
   justify-content: flex-start;
   gap: 0.5rem;
+  font-size: 1rem;
 }
 .card-price {
   font-size: 1rem;
@@ -543,7 +556,6 @@ a:hover {
     max-width: 1440px;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     flex-basis: 1;
-    padding: 0 1em;
   }
   .shop-card {
     grid-column: span 4;

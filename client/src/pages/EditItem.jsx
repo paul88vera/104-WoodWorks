@@ -8,11 +8,13 @@ import PostForm, { postFormValidator } from "../components/PostForm";
 import { getShopItem, updateItem } from "../api/shop";
 import { useState } from "react";
 import DeleteModal from "../components/DeleteModal";
+import { SignIn, useUser } from "@clerk/clerk-react";
 
 export default function EditItem() {
   const item = useLoaderData();
   const errors = useActionData();
   const { state } = useNavigation();
+  const { isSignedIn } = useUser();
 
   const isSubmitting = state === "submitting";
   const [deleteModal, setDeleteModal] = useState(false);
@@ -25,20 +27,26 @@ export default function EditItem() {
   }
   return (
     <div>
-      {deleteModal && (
-        <DeleteModal
-          item={item}
-          toggleDeleteModalClose={toggleDeleteModalClose}
-        />
+      {!isSignedIn ? (
+        <SignIn />
+      ) : (
+        <>
+          {deleteModal && (
+            <DeleteModal
+              item={item}
+              toggleDeleteModalClose={toggleDeleteModalClose}
+            />
+          )}
+          <button className="btn" onClick={toggleDeleteModalOpen}>
+            Delete
+          </button>
+          <PostForm
+            defaultValues={item}
+            isSubmitting={isSubmitting}
+            errors={errors}
+          />
+        </>
       )}
-      <button className="btn" onClick={toggleDeleteModalOpen}>
-        Delete
-      </button>
-      <PostForm
-        defaultValues={item}
-        isSubmitting={isSubmitting}
-        errors={errors}
-      />
     </div>
   );
 }
