@@ -27,6 +27,7 @@ export default function EditItem() {
   }
   return (
     <div>
+      <h1 className="section-title">Edit Item</h1>
       {!isSignedIn ? (
         <SignIn />
       ) : (
@@ -37,7 +38,7 @@ export default function EditItem() {
               toggleDeleteModalClose={toggleDeleteModalClose}
             />
           )}
-          <button className="btn" onClick={toggleDeleteModalOpen}>
+          <button className="btn delete-btn" onClick={toggleDeleteModalOpen}>
             Delete
           </button>
           <PostForm

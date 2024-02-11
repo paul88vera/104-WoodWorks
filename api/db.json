@@ -45,6 +45,22 @@
       "c2": "#000000",
       "c3": "#000000",
       "id": 2
+    },
+    {
+      "title": "Wooden Chair",
+      "desc": "This is a great chair for sitting in.",
+      "actual": "250",
+      "sale": "200",
+      "length": "30",
+      "width": "30",
+      "height": "36",
+      "fimg": "pexels-nipananlifestylecom-1424464.jpg",
+      "ftitle": "Bamboo Seat",
+      "fdesc": "Bamboo Seat",
+      "c1": "#000000",
+      "c2": "#000000",
+      "c3": "#000000",
+      "id": 3
     }
   ],
   "cart": []
