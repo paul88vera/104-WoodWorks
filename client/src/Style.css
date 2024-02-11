@@ -24,18 +24,21 @@
   background-color: var(--main-bg);
   font-size: 1rem;
   font-weight: 100;
+  margin: 0 0 2em 0;
 }
 .btn {
   padding: 0.5rem 1rem;
-  max-width: 150px;
   width: 100%;
   font-size: 1rem;
+  font-weight: 400;
   outline: none;
   border: none;
   border-radius: 5px;
   text-decoration: none;
   color: var(--accent-color);
   cursor: pointer;
+  scale: 100%;
+  transition: all 0.1s ease-in-out;
 }
 .submit-btn {
   background-color: var(--tritary-bg);
@@ -43,12 +46,19 @@
   padding: 0.5em 1em;
   border-radius: 5px;
   cursor: pointer;
+  scale: 100%;
+  transition: all 0.1s ease-in-out;
 }
 .submit-btn:hover,
 .btn:hover {
-  background-color: var(--secondary-bg);
-  color: var(--text-color);
+  scale: 97%;
+  background-color: var(--accent-color);
+  color: var(--text-secondary-color);
 }
+.btn:focus {
+  box-shadow: inset 1px 1px 5px var(--light-black-bg);
+}
+
 .error-message {
   margin: 0.2em 0;
   color: red;
@@ -430,6 +440,85 @@ a:hover {
 /**----------------------
     HOMEPAGE - END
 **----------------------**/
+/**----------------------
+    FORMS - START
+**----------------------**/
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 2em 1em;
+  padding: 2em;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+}
+.form-row {
+  text-align: left;
+  width: 100%;
+}
+
+.form-label {
+  width: 100%;
+}
+.form h4 {
+  margin: 1em 0;
+  text-transform: uppercase;
+}
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="file"],
+.form textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1em;
+  width: 100%;
+}
+.form-btn {
+  width: 100%;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--accent-color);
+  color: var(--text-secondary-color);
+}
+.form-btn:hover {
+  background-color: var(--light-black-bg);
+  color: var(--text-secondary-color);
+}
+.delete-btn,
+.cancel-btn {
+  display: flex;
+  justify-content: center;
+  color: var(--text-secondary-color);
+  margin-bottom: 4em;
+  width: 90%;
+  margin: 0 auto 4em auto;
+  padding: 1rem;
+}
+.delete-btn {
+  background-color: rgb(231, 35, 35);
+}
+.cancel-btn {
+  background-color: var(--light-black-bg);
+}
+/**----------------------
+    FORMS - END
+**----------------------**/
 
 /**----------------------
     FOOTER - START
@@ -594,5 +683,9 @@ a:hover {
     width: 100%;
     max-width: 200px;
     font-size: 1rem;
+  }
+  .btn {
+    width: 100%;
+    max-width: 300px;
   }
 }

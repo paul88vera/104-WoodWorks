@@ -15,7 +15,7 @@ export default function PostItem() {
         <SignIn />
       ) : (
         <>
-          <h1 className="page-title">Create A New Shop Item</h1>
+          <h1 className="section-title">Create A New Shop Item</h1>
           <PostForm isSubmitting={isSubmitting} errors={errors} />
         </>
       )}

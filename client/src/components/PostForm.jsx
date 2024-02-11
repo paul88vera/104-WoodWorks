@@ -12,7 +12,9 @@ export default function PostForm({
     <Form method="post" className="form">
       <div className="form-row">
         <FormGroup errorMessage={errors.title}>
-          <label htmlFor="title">Title</label>
+          <label className="form-label" htmlFor="title">
+            Item Title:
+          </label>
           <input
             type="text"
             name="title"
@@ -21,7 +23,9 @@ export default function PostForm({
           />
         </FormGroup>
         <FormGroup errorMessage={errors.desc}>
-          <label htmlFor="description">Description</label>
+          <label className="form-label" htmlFor="description">
+            Brief Description:
+          </label>
           <textarea
             type="text"
             name="description"
@@ -32,7 +36,9 @@ export default function PostForm({
 
       <div className="form-row">
         <FormGroup errorMessage={errors.actual}>
-          <label htmlFor="actualPrice">Actual Price</label>
+          <label className="form-label" htmlFor="actualPrice">
+            Actual Price: (Dollars)
+          </label>
           <input
             type="number"
             name="actualPrice"
@@ -42,7 +48,9 @@ export default function PostForm({
         </FormGroup>
 
         <FormGroup errorMessage={errors.sale}>
-          <label htmlFor="salePrice">Sale Price</label>
+          <label className="form-label" htmlFor="salePrice">
+            Sale Price: (Dollars)
+          </label>
           <input
             type="number"
             name="salePrice"
@@ -53,10 +61,10 @@ export default function PostForm({
       </div>
 
       <div className="form-row">
-        <h3>List Colors</h3>
+        <h4>List Colors</h4>
         <FormGroup errorMessage={errors.c1}>
-          <label htmlFor="colorOne">
-            Color One
+          <label className="form-label" htmlFor="colorOne">
+            Color One:
             <input
               type="color"
               name="colorOne"
@@ -67,8 +75,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.c2}>
-          <label htmlFor="colorTwo">
-            Color Two
+          <label className="form-label" htmlFor="colorTwo">
+            Color Two:
             <input
               type="color"
               name="colorTwo"
@@ -79,8 +87,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.c3}>
-          <label htmlFor="colorThree">
-            Color Three
+          <label className="form-label" htmlFor="colorThree">
+            Color Three:
             <input
               type="color"
               name="colorThree"
@@ -92,10 +100,10 @@ export default function PostForm({
       </div>
 
       <div className="form-row">
-        <h3>List Finishes</h3>
+        <h4>List Finishes</h4>
         <FormGroup errorMessage={errors.f1}>
-          <label htmlFor="finishOne">
-            Finish One{" "}
+          <label className="form-label" htmlFor="finishOne">
+            Finish One:{" "}
             <input
               type="color"
               name="finishOne"
@@ -105,8 +113,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.f2}>
-          <label htmlFor="finishTwo">
-            Finish Two{" "}
+          <label className="form-label" htmlFor="finishTwo">
+            Finish Two:{" "}
             <input
               type="color"
               name="finishTwo"
@@ -116,8 +124,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.f3}>
-          <label htmlFor="finishThree">
-            Finish Three{" "}
+          <label className="form-label" htmlFor="finishThree">
+            Finish Three:{" "}
             <input
               type="color"
               name="finishThree"
@@ -128,11 +136,11 @@ export default function PostForm({
       </div>
 
       <div className="form-row">
-        <h3>Specifications</h3>
+        <h3 className="section-title">Specifications</h3>
         <h4>Dimensions</h4>
         <FormGroup errorMessage={errors.length}>
-          <label htmlFor="length">
-            Length{" "}
+          <label className="form-label" htmlFor="length">
+            Length:{" "}
             <input
               type="number"
               name="length"
@@ -144,8 +152,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.width}>
-          <label htmlFor="width">
-            Width{" "}
+          <label className="form-label" htmlFor="width">
+            Width:{" "}
             <input
               type="number"
               name="width"
@@ -157,8 +165,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.height}>
-          <label htmlFor="height">
-            Height{" "}
+          <label className="form-label" htmlFor="height">
+            Height:{" "}
             <input
               type="number"
               name="height"
@@ -173,8 +181,8 @@ export default function PostForm({
       <div className="form-row">
         <h4>Features</h4>
         <FormGroup errorMessage={errors.ftitle}>
-          <label htmlFor="feature-title">
-            Feature Title
+          <label className="form-label" htmlFor="feature-title">
+            Feature Title:
             <input
               type="text"
               name="feature-title"
@@ -185,8 +193,8 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup errorMessage={errors.fdesc}>
-          <label htmlFor="feature-description">
-            Feature Description
+          <label className="form-label" htmlFor="feature-description">
+            Feature Description:
             <input
               type="text"
               name="feature-description"
@@ -197,21 +205,22 @@ export default function PostForm({
         </FormGroup>
         <br />
         <FormGroup>
-          <label htmlFor="feature-img">
-            Feature Icon
+          <label className="form-label" htmlFor="feature-img">
+            Feature Icon:
             <input
               type="file"
               name="feature-img"
               id="feature-img"
               defaultValue={defaultValues.fimg}
             />
+            <br />
             (Only SVG or PNG files)
           </label>
         </FormGroup>
         <br />
       </div>
-      <div>
-        <Link className="btn" to="/shop">
+      <div className="form-btn-container">
+        <Link className="btn form-btn" to="/shop">
           Cancel
         </Link>
         <button className="btn submit-btn" disabled={isSubmitting}>
