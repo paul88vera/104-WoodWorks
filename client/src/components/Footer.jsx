@@ -53,7 +53,9 @@ const Footer = () => {
           <h4>About</h4>
           <ul>
             <li>
-              <Link to="/about">Our Story</Link>
+              <Link to="/about" className="links">
+                Our Story
+              </Link>
             </li>
             <li>
               <p>Reviews</p>
@@ -140,7 +142,7 @@ const Footer = () => {
         <div className="copyright-aside">
           <p>
             Developed by{" "}
-            <Link to="https://paulvera.com" target="_blank">
+            <Link to="https://paulvera.com" target="_blank" className="">
               Paul Vera
             </Link>
           </p>

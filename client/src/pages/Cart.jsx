@@ -25,6 +25,7 @@ function loader({ request: { signal } }) {
   return getCart({ signal });
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const cartData = {
   loader,
   element: <Cart />,

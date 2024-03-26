@@ -11,7 +11,6 @@
   --accent-color: rgb(52, 117, 215);
   --light-black-bg: #4b4b4a;
 }
-
 /*-----------------
       Globals  
 ------------------*/
@@ -553,6 +552,10 @@ a:hover {
   background-color: var(--secondary-bg);
   cursor: pointer;
 }
+.subscribe-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--text-secondary-color);
+}
 .subscribe input {
   background-color: var(--light-black-bg);
   border: solid 1px var(--secondary-bg);
@@ -605,9 +608,14 @@ a:hover {
 .footer-middle-section li {
   list-style-type: none;
 }
-.footer-middle-section li a {
+.footer-middle-section li a,
+.footer-bottom-section a {
   color: var(--secondary-bg);
   font-weight: 100;
+}
+.footer-middle-section li a:hover,
+.footer-bottom-section a:hover {
+  color: var(--accent-color);
 }
 .middle {
   display: flex;
@@ -643,6 +651,7 @@ a:hover {
     display: grid;
     grid-gap: 1.6rem;
     max-width: 1440px;
+    margin: 0 auto;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     flex-basis: 1;
   }

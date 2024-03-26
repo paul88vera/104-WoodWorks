@@ -85,6 +85,7 @@ async function action({ request }) {
   return redirect(`/shop/${shop.id}`);
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const newItem = {
   loader,
   action,

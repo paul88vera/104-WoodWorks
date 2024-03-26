@@ -82,6 +82,7 @@ async function loader({ request: { signal }, params: { id } }) {
   return await getShopItem(id, { signal });
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const shopItem = {
   loader,
   element: <ShopItem />,

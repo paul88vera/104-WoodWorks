@@ -35,6 +35,7 @@ function loader({ request: { signal } }) {
   return getShop({ signal });
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ShopRoute = {
   loader,
   element: <Shop />,
