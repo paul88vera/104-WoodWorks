@@ -6,7 +6,7 @@ import { IoAddOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaWind } from "react-icons/fa6";
-import { IoSearchOutline } from "react-icons/io5";
+// import { IoSearchOutline } from "react-icons/io5";
 import {
   SignInButton,
   SignOutButton,
@@ -111,11 +111,11 @@ export default function Nav() {
                   </Link>
                 </li>
               </SignedIn>
-              <li>
+              {/* <li>
                 <Link to="/search" className="icon-links">
                   <IoSearchOutline />
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/cart" className="icon-links">
                   <BiCart />
@@ -155,11 +155,11 @@ export default function Nav() {
                   </Link>
                 </li>
               </SignedIn>
-              <li>
+              {/* <li>
                 <Link to="/search" className="icon-links">
                   <IoSearchOutline />
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/cart" className="icon-links">
                   <BiCart />
