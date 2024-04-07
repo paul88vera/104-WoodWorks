@@ -21,7 +21,7 @@ export default function Home() {
             <div className="card-img">
               <img src={Images.chair} alt="item" width="100%" />
             </div>
-            <div className="fav-card-title">{favs.title}</div>
+            <div className="fav-card-title item-title">{favs.title}</div>
           </Link>
         ))}
       </div>

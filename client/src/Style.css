@@ -649,13 +649,30 @@ a:hover {
 .item-image {
   width: 100%;
 }
-.color-container, .finishes-container {
+.color-container,
+.finishes-container {
   display: flex;
   flex-direction: row;
-  gap: .5em;
-  margin-top: .5em;
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
+.color-option {
+  height: 20px;
+  width: 20px;
+  border-radius: 100px;
+  border: solid lightgray;
+  background-color: #383633;
+}
+.color-option:hover,
+.color-option::selection,
+.color-option:active {
+  border: solid var(--accent-color);
+  cursor: pointer;
 }
 
+.item-title {
+  font-variant-caps: all-petite-caps;
+}
 /**----------------------
     SHOP ITEM - END
 **----------------------**/

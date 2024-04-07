@@ -25,9 +25,23 @@
       "fimg": "",
       "ftitle": "Wooden Table",
       "fdesc": "Wooden Table",
-      "c1": "#9f5656",
-      "c2": "#af3c3c",
-      "c3": "#ecb1b1",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ],
       "id": 1
     },
     {
@@ -41,9 +55,23 @@
       "fimg": "",
       "ftitle": "fdsafdsaf",
       "fdesc": "fdsafdsaf",
-      "c1": "#a14a4a",
-      "c2": "#000000",
-      "c3": "#000000",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ],
       "id": 2
     },
     {
@@ -57,9 +85,23 @@
       "fimg": "pexels-nipananlifestylecom-1424464.jpg",
       "ftitle": "Bamboo Seat",
       "fdesc": "Bamboo Seat",
-      "c1": "#000000",
-      "c2": "#000000",
-      "c3": "#000000",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ],
       "id": 3
     }
   ],

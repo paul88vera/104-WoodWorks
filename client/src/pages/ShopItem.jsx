@@ -13,77 +13,25 @@ export default function ShopItem() {
 
         <div className="shopitem-container">
           <div className="descriptions">
-            <h2>{item.title}</h2>
+            <h2 className="item-title">{item.title}</h2>
             <p>
               {item.sale} | {item.actual}
             </p>
             <br />
             <div className="colors">
-              <h5>Colors:</h5>
+              <h5>Colors</h5>
               <div className="color-container">
-                {item.c1 != "" ? (
-                  <input
-                    type="color"
-                    name="c1"
-                    id="c1"
-                    value={item.c1}
-                    disabled
-                  />
-                ) : undefined}
-                <br />
-                {item.c2 != "" ? (
-                  <input
-                    type="color"
-                    name="c2"
-                    id="c2"
-                    value={item.c2}
-                    disabled
-                  />
-                ) : undefined}
-                <br />
-                {item.c3 != "" ? (
-                  <input
-                    type="color"
-                    name="c3"
-                    id="c3"
-                    value={item.c3}
-                    disabled
-                  />
-                ) : undefined}
-              </div>
-              <br />
-
-              <h5>Finishes:</h5>
-              <div className="finishes-container">
-                {item.f1 != "" ? (
-                  <input
-                    type="color"
-                    name="f1"
-                    id="f1"
-                    value={item.f1}
-                    disabled
-                  />
-                ) : undefined}
-                <br />
-                {item.f2 != "" ? (
-                  <input
-                    type="color"
-                    name="f2"
-                    id="f2"
-                    value={item.f2}
-                    disabled
-                  />
-                ) : undefined}
-                <br />
-                {item.f3 != "" ? (
-                  <input
-                    type="color"
-                    name="f3"
-                    id="f3"
-                    value={item.f3}
-                    disabled
-                  />
-                ) : undefined}
+                {/* new code */}
+                <div
+                  className={`color-option`}
+                  style={{ backgroundColor: item.colors[0].color }}></div>
+                <div
+                  className={`color-option`}
+                  style={{ backgroundColor: item.colors[1].color }}></div>
+                <div
+                  className={`color-option`}
+                  style={{ backgroundColor: item.colors[2].color }}></div>
+                {/* end new code */}
               </div>
             </div>
           </div>
@@ -106,13 +54,6 @@ export default function ShopItem() {
                 Edit
               </Link>
             </SignedIn>
-            {/* <div className="featured">
-              <h5>Feature Title:</h5>
-              <p>{item.ftitle}</p>
-              <br />
-              <h5>Featured Description:</h5>
-              <p>{item.fdesc}</p>
-            </div> */}
           </div>
         </div>
       </div>
