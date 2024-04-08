@@ -8,18 +8,19 @@ export default function ShopItem() {
   return (
     <>
       <div className="item-container">
-        <div className="image-container"></div>
+        <a href="./" className="item-back-button">
+          {"<"} BACK
+        </a>
         <img src="../src/constants/wooden_chair.jpg" className="item-image" />
 
         <div className="shopitem-container">
           <div className="descriptions">
             <h2 className="item-title">{item.title}</h2>
-            <p>
-              {item.sale} | {item.actual}
-            </p>
-            <br />
+            <div className="price-container">
+              <div className="card-sale-price">${item.sale}</div>
+              <div className="card-actual-price">was ${item.actual}</div>
+            </div>
             <div className="colors">
-              <h5>Colors</h5>
               <div className="color-container">
                 {/* new code */}
                 <div
@@ -35,20 +36,28 @@ export default function ShopItem() {
               </div>
             </div>
           </div>
-          <br />
+
           <div className="specifications-container">
-            <h5>Description:</h5>
-            <p>{item.desc}</p>
-            <div className="dimensions">
-              <h2>Dimensions</h2>
-              <h5>Length:</h5>
-              {item.length} inches
-              <h5>Width:</h5>
-              {item.width} inches
-              <h5>Height:</h5>
-              {item.height} inches
+            <h3>Description</h3>
+            <div className="description">
+              <p>{item.desc}</p>
             </div>
-            <br />
+            <h3>Dimensions</h3>
+            <div className="dimensions">
+              <div>
+                <h5>Length:</h5>
+                {item.length} inches
+              </div>
+              <div>
+                <h5>Width:</h5>
+                {item.width} inches
+              </div>
+              <div>
+                <h5>Height:</h5>
+                {item.height} inches
+              </div>
+            </div>
+
             <SignedIn>
               <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
                 Edit

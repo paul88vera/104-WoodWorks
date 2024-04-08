@@ -645,12 +645,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding: 1em;
+  gap: 1em;
 }
 .item-image {
   width: 100%;
 }
-.color-container,
-.finishes-container {
+.color-container {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
@@ -672,6 +672,26 @@ a:hover {
 
 .item-title {
   font-variant-caps: all-petite-caps;
+}
+.specifications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.dimensions,
+.description {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  margin-top: -0.5em;
+}
+
+.item-back-button {
+  position: absolute;
+  right: 20px;
+  top: 120px;
+  padding: 0.3em;
+  color: lightgray;
 }
 /**----------------------
     SHOP ITEM - END
@@ -717,7 +737,7 @@ a:hover {
     flex-direction: row;
   }
   .item-image {
-    width: 70%;
+    width: 67%;
   }
 }
 @media screen and (min-width: 569px) {
