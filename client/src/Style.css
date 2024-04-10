@@ -450,10 +450,19 @@ a:hover {
   gap: 2em;
   margin: 2em 1em;
   padding: 2em;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
   background-color: var(--secondary-bg);
   border-radius: 10px;
+}
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: flex-start;
+  gap: 4em;
 }
 .form-row {
   text-align: left;
@@ -483,6 +492,7 @@ a:hover {
 .form-btn-container {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   flex-wrap: nowrap;
   gap: 1em;
   width: 100%;
@@ -738,6 +748,9 @@ a:hover {
   }
   .item-image {
     width: 67%;
+  }
+  .form-container {
+    flex-direction: row;
   }
 }
 @media screen and (min-width: 569px) {

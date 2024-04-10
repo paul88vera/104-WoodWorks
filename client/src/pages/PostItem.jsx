@@ -36,12 +36,7 @@ async function action({ request }) {
   const length = formData.get("length");
   const width = formData.get("width");
   const height = formData.get("height");
-  const ftitle = formData.get("feature-title");
-  const fdesc = formData.get("feature-title");
   const fimg = formData.get("feature-img");
-  const c1 = formData.get("colorOne");
-  const c2 = formData.get("colorTwo");
-  const c3 = formData.get("colorThree");
 
   const errors = postFormValidator({
     title,
@@ -49,14 +44,9 @@ async function action({ request }) {
     actual,
     sale,
     fimg,
-    ftitle,
-    fdesc,
     length,
     width,
     height,
-    c1,
-    c2,
-    c3,
   });
 
   if (Object.keys(errors).length > 0) {
@@ -73,11 +63,6 @@ async function action({ request }) {
       width,
       height,
       fimg,
-      ftitle,
-      fdesc,
-      c1,
-      c2,
-      c3,
     },
     { signal: request.signal }
   );

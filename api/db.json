@@ -45,9 +45,8 @@
       ]
     },
     {
-      "id": 2,
-      "title": "Another Item",
-      "desc": "fdsafdsa",
+      "title": "Table ",
+      "desc": "This is a great table for eating and stuff.",
       "actual": "400",
       "sale": "370",
       "length": "80",
@@ -56,6 +55,26 @@
       "fimg": "",
       "ftitle": "fdsafdsaf",
       "fdesc": "fdsafdsaf",
+      "c1": "#000000",
+      "c2": "#000000",
+      "c3": "#000000",
+      "f1": "#000000",
+      "f2": "#000000",
+      "f3": "#000000",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "Wooden Chair",
+      "desc": "This is a great chair for sitting in.",
+      "actual": "250",
+      "sale": "200",
+      "length": "30",
+      "width": "30",
+      "height": "36",
+      "fimg": "pexels-nipananlifestylecom-1424464.jpg",
+      "ftitle": "Bamboo Seat",
+      "fdesc": "Bamboo Seat",
       "colors": [
         {
           "id": 0,
@@ -75,17 +94,17 @@
       ]
     },
     {
-      "id": 3,
-      "title": "Wooden Chair",
-      "desc": "This is a great chair for sitting in.",
-      "actual": "250",
-      "sale": "200",
-      "length": "30",
-      "width": "30",
-      "height": "36",
-      "fimg": "pexels-nipananlifestylecom-1424464.jpg",
-      "ftitle": "Bamboo Seat",
-      "fdesc": "Bamboo Seat",
+      "id": 4,
+      "title": "New Item Table",
+      "desc": "Brief Description",
+      "actual": "450",
+      "sale": "375",
+      "length": "72",
+      "width": "52",
+      "height": "3",
+      "fimg": "",
+      "ftitle": "Wooden Thing",
+      "fdesc": "Wooden Thing",
       "colors": [
         {
           "id": 0,
