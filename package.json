@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.7.0",
+    "@stripe/stripe-js": "^3.3.0",
     "concurrently": "^8.2.2",
     "dotenv": "^16.4.1",
     "formidable": "^3.5.1",

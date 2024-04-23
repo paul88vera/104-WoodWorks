@@ -18,7 +18,7 @@ export default function Shop() {
           <Link to={`/shop/${data.id}`} className="shop-card" key={data.id}>
             <div className="card-img">
               <img src={Images.chair} alt="item" width="100%" />
-              <div className="card-title">{data.title}</div>
+              <div className="card-title item-title">{data.title}</div>
             </div>
             <div className="price-container">
               <div className="card-sale-price">${data.sale}</div>

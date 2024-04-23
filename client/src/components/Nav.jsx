@@ -6,7 +6,6 @@ import { IoAddOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaWind } from "react-icons/fa6";
-import { IoSearchOutline } from "react-icons/io5";
 import {
   SignInButton,
   SignOutButton,
@@ -106,18 +105,20 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/profile" className="icon-links">
+                  {/*  //! This needs to be by user ID */}
+                  <Link to={`/user/profile/`} className="icon-links">
                     <LuUser2 />
                   </Link>
                 </li>
               </SignedIn>
-              <li>
+              {/* <li>
                 <Link to="/search" className="icon-links">
                   <IoSearchOutline />
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/cart" className="icon-links">
+                {/*  //! This needs to be by user ID */}
+                <Link to={`/cart`} className="icon-links">
                   <BiCart />
                 </Link>
               </li>
@@ -150,18 +151,20 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/profile" className="icon-links">
+                  {/*  //! This needs to be by user ID */}
+                  <Link to={`/user/profile/`} className="icon-links">
                     <LuUser2 />
                   </Link>
                 </li>
               </SignedIn>
-              <li>
+              {/* <li>
                 <Link to="/search" className="icon-links">
                   <IoSearchOutline />
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/cart" className="icon-links">
+                {/*  //! This needs to be by user ID */}
+                <Link to={`/cart`} className="icon-links">
                   <BiCart />
                 </Link>
               </li>

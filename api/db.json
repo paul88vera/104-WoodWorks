@@ -15,6 +15,7 @@
   ],
   "shop": [
     {
+      "id": 1,
       "title": "wooden table",
       "desc": "wooden table",
       "actual": "500",
@@ -25,14 +26,27 @@
       "fimg": "",
       "ftitle": "Wooden Table",
       "fdesc": "Wooden Table",
-      "c1": "#9f5656",
-      "c2": "#af3c3c",
-      "c3": "#ecb1b1",
-      "id": 1
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ]
     },
     {
-      "title": "Another Item",
-      "desc": "fdsafdsa",
+      "title": "Table ",
+      "desc": "This is a great table for eating and stuff.",
       "actual": "400",
       "sale": "370",
       "length": "80",
@@ -41,12 +55,16 @@
       "fimg": "",
       "ftitle": "fdsafdsaf",
       "fdesc": "fdsafdsaf",
-      "c1": "#a14a4a",
+      "c1": "#000000",
       "c2": "#000000",
       "c3": "#000000",
+      "f1": "#000000",
+      "f2": "#000000",
+      "f3": "#000000",
       "id": 2
     },
     {
+      "id": 3,
       "title": "Wooden Chair",
       "desc": "This is a great chair for sitting in.",
       "actual": "250",
@@ -57,10 +75,53 @@
       "fimg": "pexels-nipananlifestylecom-1424464.jpg",
       "ftitle": "Bamboo Seat",
       "fdesc": "Bamboo Seat",
-      "c1": "#000000",
-      "c2": "#000000",
-      "c3": "#000000",
-      "id": 3
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "New Item Table",
+      "desc": "Brief Description",
+      "actual": "450",
+      "sale": "375",
+      "length": "72",
+      "width": "52",
+      "height": "3",
+      "fimg": "",
+      "ftitle": "Wooden Thing",
+      "fdesc": "Wooden Thing",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ]
     }
   ],
   "cart": []

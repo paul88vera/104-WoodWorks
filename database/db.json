@@ -22,12 +22,26 @@
       "length": "72",
       "width": "50",
       "height": "36",
-      "fimg": "",
+      "fimg": "pexels-nipananlifestylecom-1424464.jpg",
       "ftitle": "Wooden Table",
       "fdesc": "Wooden Table",
-      "c1": "#9f5656",
-      "c2": "#af3c3c",
-      "c3": "#ecb1b1",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ],
       "id": 1
     },
     {
@@ -38,13 +52,58 @@
       "length": "80",
       "width": "60",
       "height": "40",
-      "fimg": "",
+      "fimg": "pexels-nipananlifestylecom-1424464.jpg",
       "ftitle": "fdsafdsaf",
       "fdesc": "fdsafdsaf",
-      "c1": "#a14a4a",
-      "c2": "#000000",
-      "c3": "#000000",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ],
       "id": 2
+    },
+    {
+      "title": "Wooden Chair",
+      "desc": "This is a great chair for sitting in.",
+      "actual": "250",
+      "sale": "200",
+      "length": "30",
+      "width": "30",
+      "height": "36",
+      "fimg": "pexels-nipananlifestylecom-1424464.jpg",
+      "ftitle": "Bamboo Seat",
+      "fdesc": "Bamboo Seat",
+      "colors": [
+        {
+          "id": 0,
+          "name": "white",
+          "color": "#ffffff"
+        },
+        {
+          "id": 1,
+          "name": "coffee",
+          "color": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "hazelnut",
+          "color": "#333333"
+        }
+      ],
+      "id": 3
     }
-  ]
+  ],
+  "cart": []
 }
