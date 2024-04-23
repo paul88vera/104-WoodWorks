@@ -57,6 +57,20 @@ export default function ShopItem() {
                 {item.height} inches
               </div>
             </div>
+            <div className="quantity-container">
+              <label htmlFor="quantity">
+                qty.
+                <input
+                  type="number"
+                  name="quantity"
+                  id="quantity"
+                  defaultValue={1}
+                  min={1}
+                  max={3}
+                />
+              </label>
+              <button className="btn submit-btn">Add to Cart</button>
+            </div>
 
             <SignedIn>
               <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>

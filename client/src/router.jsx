@@ -43,14 +43,16 @@ export const router = createBrowserRouter([
           },
           { path: "about", element: <About /> },
           { path: "contact", element: <Contact /> },
+
           {
             path: "cart",
             ...cartData,
           },
           {
-            path: "profile",
+            path: `user/profile/`,
             element: <Profile />,
           },
+
           { path: "add", ...newItem },
           { path: "*", element: <Error /> },
         ],
