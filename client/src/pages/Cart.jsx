@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import { getCart } from "../api/cart";
-import { createPortal } from "react-dom";
 
 export default function Cart() {
   const cart = useLoaderData();
