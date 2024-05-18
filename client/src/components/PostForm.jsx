@@ -34,6 +34,17 @@ export default function PostForm({
               id="description"
               defaultValue={defaultValues.desc}></textarea>
           </FormGroup>
+          <FormGroup>
+            <label className="form-label" htmlFor="feartured">
+              Is This A Featured Item (Max of three featured Items):
+            </label>
+            <input
+              type="checkbox"
+              name="featured"
+              id="featured"
+              defaultValue={false}
+            />
+          </FormGroup>
 
           <FormGroup errorMessage={errors.actual}>
             <label className="form-label" htmlFor="actualPrice">

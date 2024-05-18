@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
-import { SignedIn } from "@clerk/clerk-react";
+import { SignedIn, useAuth } from "@clerk/clerk-react";
 
 export default function ShopItem() {
   const item = useLoaderData();
@@ -11,7 +11,11 @@ export default function ShopItem() {
         <a href="./" className="item-back-button">
           {"<"} BACK
         </a>
-        <img src="../src/constants/wooden_chair.jpg" className="item-image" />
+        <img
+          src="../src/constants/wooden_chair.jpg"
+          className="item-image"
+          title={item.title}
+        />
 
         <div className="shopitem-container">
           <div className="descriptions">
@@ -25,13 +29,16 @@ export default function ShopItem() {
                 {/* new code */}
                 <div
                   className={`color-option`}
-                  style={{ backgroundColor: item.colors[0].color }}></div>
+                  style={{ backgroundColor: "#ffffff" }}
+                  title="white"></div>
                 <div
                   className={`color-option`}
-                  style={{ backgroundColor: item.colors[1].color }}></div>
+                  style={{ backgroundColor: "#000000" }}
+                  title="coffee"></div>
                 <div
                   className={`color-option`}
-                  style={{ backgroundColor: item.colors[2].color }}></div>
+                  style={{ backgroundColor: "333333" }}
+                  title="gray"></div>
                 {/* end new code */}
               </div>
             </div>
@@ -73,9 +80,11 @@ export default function ShopItem() {
             </div>
 
             <SignedIn>
-              <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
-                Edit
-              </Link>
+              {useAuth.orgRole === "admin" ? (
+                <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
+                  Edit
+                </Link>
+              ) : null}
             </SignedIn>
           </div>
         </div>

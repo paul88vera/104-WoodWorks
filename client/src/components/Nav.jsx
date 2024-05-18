@@ -11,12 +11,14 @@ import {
   SignOutButton,
   SignedIn,
   SignedOut,
+  useAuth,
 } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 
 export default function Nav() {
   const [isMobile, setIsMobile] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
+  const { userId } = useAuth();
 
   const MobileNav = () => {
     if (window.innerWidth <= 568) {
@@ -85,10 +87,6 @@ export default function Nav() {
                   Shop
                 </Link>
 
-                <Link to="/about" className="mobile-links">
-                  About
-                </Link>
-
                 <Link to="/contact" className="mobile-links">
                   Contact
                 </Link>
@@ -104,21 +102,17 @@ export default function Nav() {
                     <IoAddOutline />
                   </Link>
                 </li>
+
                 <li>
-                  {/*  //! This needs to be by user ID */}
-                  <Link to={`/user/profile/`} className="icon-links">
+                  <Link
+                    to={`https://informed-stag-2.accounts.dev/user`}
+                    className="icon-links">
                     <LuUser2 />
                   </Link>
                 </li>
               </SignedIn>
-              {/* <li>
-                <Link to="/search" className="icon-links">
-                  <IoSearchOutline />
-                </Link>
-              </li> */}
               <li>
-                {/*  //! This needs to be by user ID */}
-                <Link to={`/cart`} className="icon-links">
+                <Link to={`/cart/${userId}`} className="icon-links">
                   <BiCart />
                 </Link>
               </li>
@@ -137,9 +131,6 @@ export default function Nav() {
                 <Link to="/shop">Shop</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
                 <Link to="/contact">Contact</Link>
               </li>
             </div>
@@ -150,21 +141,17 @@ export default function Nav() {
                     <IoAddOutline />
                   </Link>
                 </li>
+
                 <li>
-                  {/*  //! This needs to be by user ID */}
-                  <Link to={`/user/profile/`} className="icon-links">
+                  <Link
+                    to={`https://informed-stag-2.accounts.dev/user`}
+                    className="icon-links">
                     <LuUser2 />
                   </Link>
                 </li>
               </SignedIn>
-              {/* <li>
-                <Link to="/search" className="icon-links">
-                  <IoSearchOutline />
-                </Link>
-              </li> */}
               <li>
-                {/*  //! This needs to be by user ID */}
-                <Link to={`/cart`} className="icon-links">
+                <Link to={`/cart/${userId}`} className="icon-links">
                   <BiCart />
                 </Link>
               </li>

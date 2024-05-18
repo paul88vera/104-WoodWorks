@@ -1,49 +1,5 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "Paul Vera",
-      "type": "administrator",
-      "special": "developer"
-    },
-    {
-      "id": 2,
-      "name": "Other User",
-      "type": "administrator",
-      "special": "none"
-    }
-  ],
   "shop": [
-    {
-      "id": 1,
-      "title": "wooden table",
-      "desc": "wooden table",
-      "actual": "500",
-      "sale": "350",
-      "length": "72",
-      "width": "50",
-      "height": "36",
-      "fimg": "",
-      "ftitle": "Wooden Table",
-      "fdesc": "Wooden Table",
-      "colors": [
-        {
-          "id": 0,
-          "name": "white",
-          "color": "#ffffff"
-        },
-        {
-          "id": 1,
-          "name": "coffee",
-          "color": "#000000"
-        },
-        {
-          "id": 2,
-          "name": "hazelnut",
-          "color": "#333333"
-        }
-      ]
-    },
     {
       "title": "Table ",
       "desc": "This is a great table for eating and stuff.",
@@ -55,12 +11,6 @@
       "fimg": "",
       "ftitle": "fdsafdsaf",
       "fdesc": "fdsafdsaf",
-      "c1": "#000000",
-      "c2": "#000000",
-      "c3": "#000000",
-      "f1": "#000000",
-      "f2": "#000000",
-      "f3": "#000000",
       "id": 2
     },
     {
@@ -74,24 +24,7 @@
       "height": "36",
       "fimg": "pexels-nipananlifestylecom-1424464.jpg",
       "ftitle": "Bamboo Seat",
-      "fdesc": "Bamboo Seat",
-      "colors": [
-        {
-          "id": 0,
-          "name": "white",
-          "color": "#ffffff"
-        },
-        {
-          "id": 1,
-          "name": "coffee",
-          "color": "#000000"
-        },
-        {
-          "id": 2,
-          "name": "hazelnut",
-          "color": "#333333"
-        }
-      ]
+      "fdesc": "Bamboo Seat"
     },
     {
       "id": 4,
@@ -104,24 +37,7 @@
       "height": "3",
       "fimg": "",
       "ftitle": "Wooden Thing",
-      "fdesc": "Wooden Thing",
-      "colors": [
-        {
-          "id": 0,
-          "name": "white",
-          "color": "#ffffff"
-        },
-        {
-          "id": 1,
-          "name": "coffee",
-          "color": "#000000"
-        },
-        {
-          "id": 2,
-          "name": "hazelnut",
-          "color": "#333333"
-        }
-      ]
+      "fdesc": "Wooden Thing"
     }
   ],
   "cart": []

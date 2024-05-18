@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import { getCart } from "../api/cart";
+import { createPortal } from "react-dom";
 
 export default function Cart() {
   const cart = useLoaderData();
   return (
     <div className="cart-container">
-      <a href="./" className="item-back-button">
+      <a href="../" className="item-back-button">
         {"<"} BACK
       </a>
       <h1 className="section-title">Cart</h1>
