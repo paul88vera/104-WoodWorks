@@ -31,6 +31,7 @@ async function action({ request }) {
   const formData = await request.formData();
   const title = formData.get("title");
   const desc = formData.get("description");
+  const featured = formData.get("featured");
   const actual = formData.get("actualPrice");
   const sale = formData.get("salePrice");
   const length = formData.get("length");
@@ -57,6 +58,7 @@ async function action({ request }) {
     {
       title,
       desc,
+      featured,
       actual,
       sale,
       length,

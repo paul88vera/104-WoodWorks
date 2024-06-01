@@ -26,7 +26,7 @@
   margin: 0 0 2em 0;
 }
 .btn {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   width: 100%;
   font-size: 1rem;
   font-weight: 400;
@@ -42,7 +42,7 @@
 .submit-btn {
   background-color: var(--tritary-bg);
   color: var(--text-secondary-color);
-  padding: 0.5em 1em;
+  padding: 0.5rem 1em;
   border-radius: 5px;
   cursor: pointer;
   scale: 100%;
@@ -479,7 +479,11 @@ a:hover {
 .form input[type="text"],
 .form input[type="number"],
 .form input[type="file"],
-.form textarea {
+.form textarea,
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -714,6 +718,59 @@ a:hover {
 /**----------------------
     SHOP ITEM - END
 **----------------------**/
+/**----------------------
+      CONTACT PAGE 
+**-----------------------*/
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  padding-bottom: 4rem;
+}
+.contact-header {
+  font-size: 2rem;
+  text-align: center;
+}
+.contact-blurb {
+  padding: 2rem 2rem 2rem 2rem;
+  width: fit-content;
+  font-size: inherit;
+}
+
+/* Contact Form Start */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2rem 1rem;
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  min-width: none;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+.contact-form p {
+  text-align: center;
+}
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 1rem;
+  min-width: none;
+}
+.contact-form textarea {
+  height: 180px;
+  resize: none;
+  width: 100%;
+}
+
+/* Contact Form End */
 
 /*----------------------
       MEDIA QUERIES
@@ -793,5 +850,8 @@ a:hover {
   }
   .cart-icon-section {
     width: 130px;
+  }
+  .contact-form {
+    padding: 4rem;
   }
 }

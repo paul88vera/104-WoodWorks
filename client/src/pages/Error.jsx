@@ -3,7 +3,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 
 export default function Error() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState();
 
   return (
     <div>

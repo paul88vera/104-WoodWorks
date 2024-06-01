@@ -8,6 +8,7 @@ export default function About() {
         <img src={Images.shop} alt="hero" width="100%" />
       </HeroBanner>
       <h1 className="section-title">About</h1>
+      <div className="contrast-section">Hi there</div>
     </div>
   );
 }

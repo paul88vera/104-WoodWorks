@@ -1,10 +1,8 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import Profile from "./pages/Profile";
 import Error from "./pages/Error";
 import ErrorMessage from "./pages/ErrorMessage";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
 import { ShopRoute } from "./pages/Shop";
 import { homeData } from "./pages/Home";
 import { cartData } from "./pages/Cart";
@@ -41,18 +39,12 @@ export const router = createBrowserRouter([
               },
             ],
           },
-          { path: "about", element: <About /> },
           { path: "contact", element: <Contact /> },
 
           {
-            path: "cart",
+            path: `cart/:id`,
             ...cartData,
           },
-          {
-            path: `user/profile/`,
-            element: <Profile />,
-          },
-
           { path: "add", ...newItem },
           { path: "*", element: <Error /> },
         ],
