@@ -11,15 +11,16 @@ import {
   SignOutButton,
   SignedIn,
   SignedOut,
-  useAuth,
 } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
+import Cart from "../pages/Cart";
 
 export default function Nav() {
   const [isMobile, setIsMobile] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
-  const { userId } = useAuth();
+  const [isOpen, isOpenSet] = useState(false);
 
+  // mobile function to check if screen size is less than 568px
   const MobileNav = () => {
     if (window.innerWidth <= 568) {
       setIsMobile(true);
@@ -29,9 +30,23 @@ export default function Nav() {
     }
   };
 
+  // checks the size of the screen to active the mobile navigation
   useEffect(() => {
     window.addEventListener("resize", MobileNav);
   });
+
+  // function to open the cart modal
+  const openCartModal = () => {
+    if (!isOpen) {
+      isOpenSet(true);
+    }
+  };
+  // function to close the cart modal
+  const closeCartModal = () => {
+    if (isOpen) {
+      isOpenSet(false);
+    }
+  };
 
   return (
     <>
@@ -112,9 +127,8 @@ export default function Nav() {
                 </li>
               </SignedIn>
               <li>
-                <Link to={`/cart/${userId}`} className="icon-links">
-                  <BiCart />
-                </Link>
+                <BiCart className="icon-links cart-link" onClick={openCartModal} />
+                {isOpen ? <Cart closeCart={closeCartModal} /> : null}
               </li>
             </div>
           </>
@@ -151,9 +165,8 @@ export default function Nav() {
                 </li>
               </SignedIn>
               <li>
-                <Link to={`/cart/${userId}`} className="icon-links">
-                  <BiCart />
-                </Link>
+                <BiCart className="icon-links cart-link" onClick={openCartModal} />
+                {isOpen ? <Cart closeCart={closeCartModal} /> : null}
               </li>
             </div>
           </>

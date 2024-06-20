@@ -38,7 +38,37 @@
       "fimg": "",
       "ftitle": "Wooden Thing",
       "fdesc": "Wooden Thing"
+    },
+    {
+      "title": "New Product",
+      "desc": "Newest Product to try out the entry form",
+      "featured": null,
+      "actual": "350",
+      "sale": "300",
+      "length": "32",
+      "width": "45",
+      "height": "33",
+      "fimg": "",
+      "id": 5
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 0,
+      "shopItems": [
+        {
+          "item": 1,
+          "name": "item1",
+          "shopId": 4,
+          "quantity": 1
+        },
+        {
+          "item": 2,
+          "name": "item2",
+          "shopId": 2,
+          "quantity": 2
+        }
+      ]
+    }
+  ]
 }
