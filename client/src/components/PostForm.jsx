@@ -42,7 +42,8 @@ export default function PostForm({
               type="checkbox"
               name="featured"
               id="featured"
-              defaultValue={false}
+              value="true"
+              defaultChecked="false"
             />
           </FormGroup>
 
