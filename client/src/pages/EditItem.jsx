@@ -67,6 +67,7 @@ async function action({ request, params: { id } }) {
   const featured = formData.get("featured");
   const fdesc = formData.get("feature-title");
   const fimg = formData.get("feature-img");
+  const quantity = formData.get('quantity');
 
   const errors = postFormValidator({
     title,
@@ -78,6 +79,7 @@ async function action({ request, params: { id } }) {
     height,
     ftitle,
     fdesc,
+    quantity
   });
 
   if (Object.keys(errors).length > 0) {
@@ -96,6 +98,7 @@ async function action({ request, params: { id } }) {
       width,
       height,
       fimg,
+      quantity
     },
     { signal: request.signal }
   );

@@ -1,9 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
 import { SignedIn } from "@clerk/clerk-react";
+import { useRef, useState } from "react";
 
 export default function ShopItem() {
   const item = useLoaderData();
+  const custQty = useRef();
+  const customerQuantity = document.getElementById("quantity");
+  const [quantity, setQuantity] = useState(1);
+
+  const getQuantity = () => {
+    const Qty = customerQuantity.value;
+    setQuantity(Qty);
+  };
 
   return (
     <>
@@ -52,7 +61,7 @@ export default function ShopItem() {
           </div>
           <div className="quantity-container">
             <label htmlFor="quantity">
-              qty.
+              <b>qty.</b>
               <input
                 type="number"
                 name="quantity"
@@ -60,10 +69,14 @@ export default function ShopItem() {
                 defaultValue={1}
                 min={1}
                 max={3}
+                ref={custQty}
+                onChangeCapture={getQuantity}
                 //TODO! need to make a reference to add to localStorage
-                ref={item.quantity}
               />
             </label>
+          </div>
+          <div>
+            <b> Items in stock: {item.quantity}</b>
           </div>
           <div className="specifications-container">
             <h3>Description</h3>
@@ -91,8 +104,12 @@ export default function ShopItem() {
                 localStorage.setItem(`t4_cartItem_${item.id}`, item.id);
                 //TODO! need to make a reference to add to localStorage
                 localStorage.setItem(
-                  `t4_cartItem_${item.id}_quantity`,
-                  item.quantity
+                  `t4_cartItem_${item.id}_total_quantity`,
+                  item.quantity - quantity
+                );
+                localStorage.setItem(
+                  `t4_cartItem_${item.id}_customer_quantity`,
+                  quantity
                 );
               }}>
               Add to Cart
