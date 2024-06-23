@@ -31,17 +31,14 @@ async function action({ request }) {
   const formData = await request.formData();
   const title = formData.get("title");
   const desc = formData.get("description");
+  const featured = formData.get("featured");
   const actual = formData.get("actualPrice");
   const sale = formData.get("salePrice");
   const length = formData.get("length");
   const width = formData.get("width");
   const height = formData.get("height");
-  const ftitle = formData.get("feature-title");
-  const fdesc = formData.get("feature-title");
   const fimg = formData.get("feature-img");
-  const c1 = formData.get("colorOne");
-  const c2 = formData.get("colorTwo");
-  const c3 = formData.get("colorThree");
+  const quantity = formData.get('quantity');
 
   const errors = postFormValidator({
     title,
@@ -49,14 +46,10 @@ async function action({ request }) {
     actual,
     sale,
     fimg,
-    ftitle,
-    fdesc,
     length,
     width,
     height,
-    c1,
-    c2,
-    c3,
+    quantity
   });
 
   if (Object.keys(errors).length > 0) {
@@ -67,17 +60,14 @@ async function action({ request }) {
     {
       title,
       desc,
+      featured,
       actual,
       sale,
       length,
       width,
       height,
       fimg,
-      ftitle,
-      fdesc,
-      c1,
-      c2,
-      c3,
+      quantity
     },
     { signal: request.signal }
   );
@@ -85,6 +75,7 @@ async function action({ request }) {
   return redirect(`/shop/${shop.id}`);
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const newItem = {
   loader,
   action,

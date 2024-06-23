@@ -6,7 +6,6 @@ import { IoAddOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaWind } from "react-icons/fa6";
-import { IoSearchOutline } from "react-icons/io5";
 import {
   SignInButton,
   SignOutButton,
@@ -14,11 +13,14 @@ import {
   SignedOut,
 } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
+import Cart from "../pages/Cart";
 
 export default function Nav() {
   const [isMobile, setIsMobile] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
+  const [isOpen, isOpenSet] = useState(false);
 
+  // mobile function to check if screen size is less than 568px
   const MobileNav = () => {
     if (window.innerWidth <= 568) {
       setIsMobile(true);
@@ -28,9 +30,23 @@ export default function Nav() {
     }
   };
 
+  // checks the size of the screen to active the mobile navigation
   useEffect(() => {
     window.addEventListener("resize", MobileNav);
   });
+
+  // function to open the cart modal
+  const openCartModal = () => {
+    if (!isOpen) {
+      isOpenSet(true);
+    }
+  };
+  // function to close the cart modal
+  const closeCartModal = () => {
+    if (isOpen) {
+      isOpenSet(false);
+    }
+  };
 
   return (
     <>
@@ -51,31 +67,27 @@ export default function Nav() {
           <SignedIn>
             <SignOutButton
               signOutCallback={() => redirect("/home")}
-              className="btn submit-btn"
+              className="clk-btn"
             />
           </SignedIn>
           <SignedOut>
-            <SignInButton className="btn submit-btn" />
+            <SignInButton className="clk-btn" />
           </SignedOut>
         </div>
       </div>
       <ul id="nav-container">
-        {openMobile ? (
-          <div>
-            <IoMdClose
-              style={{ fontSize: "1.5rem", cursor: "pointer" }}
-              onClick={() => setOpenMobile((current) => !current)}
-            />
-          </div>
-        ) : null}
         {isMobile ? (
           <>
             <div
-              className="burger"
+              className={`burger`}
               onClick={() => {
                 setOpenMobile((current) => !current);
               }}>
-              {!openMobile ? <FaLinesLeaning /> : null}
+              {!openMobile ? (
+                <FaLinesLeaning />
+              ) : (
+                <IoMdClose style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+              )}
               <div
                 className={`mobileNav ${openMobile ? "appear" : "no-display"}`}>
                 <Link to="/" className="mobile-links">
@@ -84,10 +96,6 @@ export default function Nav() {
 
                 <Link to="/shop" className="mobile-links">
                   Shop
-                </Link>
-
-                <Link to="/about" className="mobile-links">
-                  About
                 </Link>
 
                 <Link to="/contact" className="mobile-links">
@@ -105,21 +113,21 @@ export default function Nav() {
                     <IoAddOutline />
                   </Link>
                 </li>
+
                 <li>
-                  <Link to="/profile" className="icon-links">
+                  <Link
+                    to={`https://informed-stag-2.accounts.dev/user`}
+                    className="icon-links">
                     <LuUser2 />
                   </Link>
                 </li>
               </SignedIn>
               <li>
-                <Link to="/search" className="icon-links">
-                  <IoSearchOutline />
-                </Link>
-              </li>
-              <li>
-                <Link to="/cart" className="icon-links">
-                  <BiCart />
-                </Link>
+                <BiCart
+                  className="icon-links cart-link"
+                  onClick={openCartModal}
+                />
+                {isOpen ? <Cart closeCart={closeCartModal} /> : null}
               </li>
             </div>
           </>
@@ -136,9 +144,6 @@ export default function Nav() {
                 <Link to="/shop">Shop</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
                 <Link to="/contact">Contact</Link>
               </li>
             </div>
@@ -149,21 +154,21 @@ export default function Nav() {
                     <IoAddOutline />
                   </Link>
                 </li>
+
                 <li>
-                  <Link to="/profile" className="icon-links">
+                  <Link
+                    to={`https://informed-stag-2.accounts.dev/user`}
+                    className="icon-links">
                     <LuUser2 />
                   </Link>
                 </li>
               </SignedIn>
               <li>
-                <Link to="/search" className="icon-links">
-                  <IoSearchOutline />
-                </Link>
-              </li>
-              <li>
-                <Link to="/cart" className="icon-links">
-                  <BiCart />
-                </Link>
+                <BiCart
+                  className="icon-links cart-link"
+                  onClick={openCartModal}
+                />
+                {isOpen ? <Cart closeCart={closeCartModal} /> : null}
               </li>
             </div>
           </>

@@ -16,14 +16,17 @@ export default function Home() {
       <div className="section-title">Design deals, delivered free</div>
       {/* TURN INTO A PROP vvvv */}
       <div className="shop-grid fav-grid">
-        {shop.map((favs) => (
-          <Link to={`/shop/${favs.id}`} className="shop-card" key={favs.id}>
-            <div className="card-img">
-              <img src={Images.chair} alt="item" width="100%" />
-            </div>
-            <div className="fav-card-title">{favs.title}</div>
-          </Link>
-        ))}
+        {shop
+          .filter((item) => item.featured !== null)
+          .splice(0, 3)
+          .map((favs) => (
+            <Link to={`/shop/${favs.id}`} className="shop-card" key={favs.id}>
+              <div className="card-img">
+                <img src={Images.chair} alt="item" width="100%" />
+              </div>
+              <div className="fav-card-title item-title">{favs.title}</div>
+            </Link>
+          ))}
       </div>
       {/* TURN INTO A PROP ^^^^ */}
       <ContrastSection />
@@ -35,6 +38,7 @@ function loader({ request: { signal } }) {
   return getShop({ signal });
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const homeData = {
   loader,
   element: <Home />,

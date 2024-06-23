@@ -38,14 +38,16 @@ export default function EditItem() {
               toggleDeleteModalClose={toggleDeleteModalClose}
             />
           )}
-          <button className="btn delete-btn" onClick={toggleDeleteModalOpen}>
-            Delete
-          </button>
           <PostForm
             defaultValues={item}
             isSubmitting={isSubmitting}
             errors={errors}
           />
+          <div className="delete-container">
+            <button className="btn delete-btn" onClick={toggleDeleteModalOpen}>
+              Delete
+            </button>
+          </div>
         </>
       )}
     </div>
@@ -62,14 +64,10 @@ async function action({ request, params: { id } }) {
   const width = formData.get("width");
   const height = formData.get("height");
   const ftitle = formData.get("feature-title");
+  const featured = formData.get("featured");
   const fdesc = formData.get("feature-title");
   const fimg = formData.get("feature-img");
-  const c1 = formData.get("colorOne");
-  const c2 = formData.get("colorTwo");
-  const c3 = formData.get("colorThree");
-  const f1 = formData.get("finishOne");
-  const f2 = formData.get("finishTwo");
-  const f3 = formData.get("finishThree");
+  const quantity = formData.get('quantity');
 
   const errors = postFormValidator({
     title,
@@ -81,8 +79,7 @@ async function action({ request, params: { id } }) {
     height,
     ftitle,
     fdesc,
-    c1,
-    f1,
+    quantity
   });
 
   if (Object.keys(errors).length > 0) {
@@ -94,20 +91,14 @@ async function action({ request, params: { id } }) {
     {
       title,
       desc,
+      featured,
       actual,
       sale,
       length,
       width,
       height,
       fimg,
-      ftitle,
-      fdesc,
-      c1,
-      c2,
-      c3,
-      f1,
-      f2,
-      f3,
+      quantity
     },
     { signal: request.signal }
   );
@@ -119,6 +110,7 @@ function loader({ request: { signal }, params: { id } }) {
   return getShopItem(id, { signal });
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const editItem = {
   loader,
   action,
