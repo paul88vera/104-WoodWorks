@@ -38,14 +38,16 @@ export default function EditItem() {
               toggleDeleteModalClose={toggleDeleteModalClose}
             />
           )}
-          <button className="btn delete-btn" onClick={toggleDeleteModalOpen}>
-            Delete
-          </button>
           <PostForm
             defaultValues={item}
             isSubmitting={isSubmitting}
             errors={errors}
           />
+          <div className="delete-container">
+            <button className="btn delete-btn" onClick={toggleDeleteModalOpen}>
+              Delete
+            </button>
+          </div>
         </>
       )}
     </div>

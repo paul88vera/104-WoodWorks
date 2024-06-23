@@ -67,31 +67,27 @@ export default function Nav() {
           <SignedIn>
             <SignOutButton
               signOutCallback={() => redirect("/home")}
-              className="btn submit-btn"
+              className="clk-btn"
             />
           </SignedIn>
           <SignedOut>
-            <SignInButton className="btn submit-btn" />
+            <SignInButton className="clk-btn" />
           </SignedOut>
         </div>
       </div>
       <ul id="nav-container">
-        {openMobile ? (
-          <div>
-            <IoMdClose
-              style={{ fontSize: "1.5rem", cursor: "pointer" }}
-              onClick={() => setOpenMobile((current) => !current)}
-            />
-          </div>
-        ) : null}
         {isMobile ? (
           <>
             <div
-              className="burger"
+              className={`burger`}
               onClick={() => {
                 setOpenMobile((current) => !current);
               }}>
-              {!openMobile ? <FaLinesLeaning /> : null}
+              {!openMobile ? (
+                <FaLinesLeaning />
+              ) : (
+                <IoMdClose style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+              )}
               <div
                 className={`mobileNav ${openMobile ? "appear" : "no-display"}`}>
                 <Link to="/" className="mobile-links">
@@ -127,7 +123,10 @@ export default function Nav() {
                 </li>
               </SignedIn>
               <li>
-                <BiCart className="icon-links cart-link" onClick={openCartModal} />
+                <BiCart
+                  className="icon-links cart-link"
+                  onClick={openCartModal}
+                />
                 {isOpen ? <Cart closeCart={closeCartModal} /> : null}
               </li>
             </div>
@@ -165,7 +164,10 @@ export default function Nav() {
                 </li>
               </SignedIn>
               <li>
-                <BiCart className="icon-links cart-link" onClick={openCartModal} />
+                <BiCart
+                  className="icon-links cart-link"
+                  onClick={openCartModal}
+                />
                 {isOpen ? <Cart closeCart={closeCartModal} /> : null}
               </li>
             </div>

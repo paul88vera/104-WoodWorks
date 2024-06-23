@@ -3,7 +3,7 @@
     {
       "title": "wooden table",
       "desc": "wooden table",
-      "featured": null,
+      "featured": "true",
       "actual": "350",
       "sale": "275",
       "length": "32",
@@ -39,7 +39,7 @@
     {
       "title": "New Featured Item",
       "desc": "new featured item",
-      "featured": null,
+      "featured": "true",
       "actual": "600",
       "sale": "550",
       "length": "32",
@@ -63,7 +63,7 @@
     {
       "title": "last test of Featured Item",
       "desc": "last test of Featured Item",
-      "featured": null,
+      "featured": "true",
       "actual": "700",
       "sale": "675",
       "length": "40",

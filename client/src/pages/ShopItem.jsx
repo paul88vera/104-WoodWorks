@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
-import { SignedIn, useAuth } from "@clerk/clerk-react";
+import { SignedIn } from "@clerk/clerk-react";
 
 export default function ShopItem() {
   const item = useLoaderData();
@@ -18,6 +18,13 @@ export default function ShopItem() {
         />
 
         <div className="shopitem-container">
+          <SignedIn>
+            <Link
+              className="btn submit-btn edit-btn"
+              to={`/shop/${item.id}/edit`}>
+              Edit
+            </Link>
+          </SignedIn>
           <div className="descriptions">
             <h2 className="item-title">{item.title}</h2>
             <div className="price-container">
@@ -43,7 +50,21 @@ export default function ShopItem() {
               </div>
             </div>
           </div>
-
+          <div className="quantity-container">
+            <label htmlFor="quantity">
+              qty.
+              <input
+                type="number"
+                name="quantity"
+                id="quantity"
+                defaultValue={1}
+                min={1}
+                max={3}
+                //TODO! need to make a reference to add to localStorage
+                ref={item.quantity}
+              />
+            </label>
+          </div>
           <div className="specifications-container">
             <h3>Description</h3>
             <div className="description">
@@ -64,28 +85,18 @@ export default function ShopItem() {
                 {item.height} inches
               </div>
             </div>
-            <div className="quantity-container">
-              <label htmlFor="quantity">
-                qty.
-                <input
-                  type="number"
-                  name="quantity"
-                  id="quantity"
-                  defaultValue={1}
-                  min={1}
-                  max={3}
-                />
-              </label>
-              <button className="btn submit-btn">Add to Cart</button>
-            </div>
-
-            <SignedIn>
-              {useAuth.orgRole === "admin" ? (
-                <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
-                  Edit
-                </Link>
-              ) : null}
-            </SignedIn>
+            <button
+              className="btn submit-btn"
+              onClick={() => {
+                localStorage.setItem(`t4_cartItem_${item.id}`, item.id);
+                //TODO! need to make a reference to add to localStorage
+                localStorage.setItem(
+                  `t4_cartItem_${item.id}_quantity`,
+                  item.quantity
+                );
+              }}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

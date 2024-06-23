@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import { getCart } from "../api/cart";
 import { createPortal } from "react-dom";
+import { IoClose } from "react-icons/io5";
 
 export default function Cart({ closeCart }) {
   const cart = useLoaderData();
-  console.log(cart);
+
   return createPortal(
     <div id="shopping-cart">
       <div className="cart-container">
@@ -16,40 +17,37 @@ export default function Cart({ closeCart }) {
             href="../"
             className="item-back-button cart-item__back-button"
             onClick={closeCart}>
-            X
+            <IoClose className="cart_close-icon" />
           </div>
         </div>
         <div className="cart-item__container">
-          {/* {cart.length === 0 ? (
+          {!cart ? (
             <p className="cart-item__empty">Your cart is currently empty</p>
           ) : (
-            <div>hi</div>
-            // {cart.map((items) => <div key={items.id} className="cart-item__item-container">
-            //   {items.name}
-            // </div>)}
-          )} */}
+            <>
+              <div className="cart-item__totals">
+                <div className="cart-item__labels">
+                  <p>Subtotal</p>
+                  <p className="cart-item__sale-price-label">Sale Savings</p>
+                  <p>Shipping</p>
+                  <p className="cart-item__total-price-label">Total</p>
+                </div>
+                {/* <div className="cart-item__prices">
+                  <p>${price}</p>
+                  <p className="cart-item__sale-price-number">-${salePrice}</p>
+                  <p>FREE</p>
+                  <p className="cart-item__total-price-number">
+                    ${price - salePrice}
+                  </p>
+                </div> */}
+              </div>
+              <div>
+                <button className="checkout-btn">SECURE CHECKOUT</button>
+              </div>
+            </>
+          )}
         </div>
-
-        <div className="cart-item__totals">
-          <div className="cart-item__labels">
-            <p>Subtotal</p>
-            <p className="cart-item__sale-price-label">Sale Savings</p>
-            <p>Shipping</p>
-            <p className="cart-item__total-price-label">Total</p>
-          </div>
-          {/* <div className="cart-item__prices">
-            <p>${price}</p>
-            <p className="cart-item__sale-price-number">-${salePrice}</p>
-            <p>FREE</p>
-            <p className="cart-item__total-price-number">
-              ${price - salePrice}
-            </p>
-          </div> */}
-        </div>
-        <div>
-          <button className="checkout-btn">SECURE CHECKOUT</button>
-        </div>
-      </div>{" "}
+      </div>
     </div>,
     document.getElementById("alert-message")
   );

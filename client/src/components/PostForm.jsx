@@ -43,7 +43,7 @@ export default function PostForm({
               name="featured"
               id="featured"
               value="true"
-              defaultChecked="false"
+              defaultChecked={defaultValues.featured}
             />
           </FormGroup>
 
