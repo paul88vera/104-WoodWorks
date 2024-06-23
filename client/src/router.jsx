@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
           { index: true, element: <Navigate to="/home" /> },
           { path: "home", ...homeData },
           {
-            path: "shop",
+            path: "/shop",
             children: [
               { index: true, ...ShopRoute },
               {
@@ -40,7 +40,6 @@ export const router = createBrowserRouter([
             ],
           },
           { path: "contact", element: <Contact /> },
-
           {
             path: `cart/:id`,
             ...cartData,

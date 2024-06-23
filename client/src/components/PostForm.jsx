@@ -42,7 +42,8 @@ export default function PostForm({
               type="checkbox"
               name="featured"
               id="featured"
-              defaultValue={false}
+              value="true"
+              defaultChecked={defaultValues.featured}
             />
           </FormGroup>
 
@@ -125,6 +126,20 @@ export default function PostForm({
               in.
             </label>
           </FormGroup>
+          <br />
+          <FormGroup errorMessage={errors.quantity}>
+            <label className="form-label" htmlFor="quantity">
+              Total Number of Items in Stock
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              min={1}
+              max={150}
+              defaultValue={defaultValues.quantity}
+            />
+          </FormGroup>
         </div>
       </div>
 
@@ -148,6 +163,7 @@ export function postFormValidator({
   length,
   width,
   height,
+  quantity,
 }) {
   const errors = {};
 
@@ -171,6 +187,9 @@ export function postFormValidator({
   }
   if (height === "") {
     errors.height = "Required";
+  }
+  if (quantity === "") {
+    errors.quantity = "Required";
   }
 
   return errors;

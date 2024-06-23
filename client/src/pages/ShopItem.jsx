@@ -1,9 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
-import { SignedIn, useAuth } from "@clerk/clerk-react";
+import { SignedIn } from "@clerk/clerk-react";
+import { useRef, useState } from "react";
 
 export default function ShopItem() {
   const item = useLoaderData();
+  const custQty = useRef();
+  const customerQuantity = document.getElementById("quantity");
+  const [quantity, setQuantity] = useState(1);
+
+  const getQuantity = () => {
+    const Qty = customerQuantity.value;
+    setQuantity(Qty);
+  };
 
   return (
     <>
@@ -18,6 +27,13 @@ export default function ShopItem() {
         />
 
         <div className="shopitem-container">
+          <SignedIn>
+            <Link
+              className="btn submit-btn edit-btn"
+              to={`/shop/${item.id}/edit`}>
+              Edit
+            </Link>
+          </SignedIn>
           <div className="descriptions">
             <h2 className="item-title">{item.title}</h2>
             <div className="price-container">
@@ -43,7 +59,25 @@ export default function ShopItem() {
               </div>
             </div>
           </div>
-
+          <div className="quantity-container">
+            <label htmlFor="quantity">
+              <b>qty.</b>
+              <input
+                type="number"
+                name="quantity"
+                id="quantity"
+                defaultValue={1}
+                min={1}
+                max={3}
+                ref={custQty}
+                onChangeCapture={getQuantity}
+                //TODO! need to make a reference to add to localStorage
+              />
+            </label>
+          </div>
+          <div>
+            <b> Items in stock: {item.quantity}</b>
+          </div>
           <div className="specifications-container">
             <h3>Description</h3>
             <div className="description">
@@ -64,28 +98,22 @@ export default function ShopItem() {
                 {item.height} inches
               </div>
             </div>
-            <div className="quantity-container">
-              <label htmlFor="quantity">
-                qty.
-                <input
-                  type="number"
-                  name="quantity"
-                  id="quantity"
-                  defaultValue={1}
-                  min={1}
-                  max={3}
-                />
-              </label>
-              <button className="btn submit-btn">Add to Cart</button>
-            </div>
-
-            <SignedIn>
-              {useAuth.orgRole === "admin" ? (
-                <Link className="btn submit-btn" to={`/shop/${item.id}/edit`}>
-                  Edit
-                </Link>
-              ) : null}
-            </SignedIn>
+            <button
+              className="btn submit-btn"
+              onClick={() => {
+                localStorage.setItem(`t4_cartItem_${item.id}`, item.id);
+                //TODO! need to make a reference to add to localStorage
+                localStorage.setItem(
+                  `t4_cartItem_${item.id}_total_quantity`,
+                  item.quantity - quantity
+                );
+                localStorage.setItem(
+                  `t4_cartItem_${item.id}_customer_quantity`,
+                  quantity
+                );
+              }}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
