@@ -94,6 +94,10 @@ export default function Nav() {
                   Home
                 </Link>
 
+                <Link to="/services" className="mobile-links">
+                  Services
+                </Link>
+
                 <Link to="/shop" className="mobile-links">
                   Shop
                 </Link>
@@ -139,6 +143,9 @@ export default function Nav() {
             <div className="nav-link-container">
               <li>
                 <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
               </li>
               <li>
                 <Link to="/shop">Shop</Link>

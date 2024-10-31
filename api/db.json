@@ -16,28 +16,15 @@
     {
       "title": "Wooden Kennel",
       "desc": "wooden kennel",
-      "featured": null,
+      "featured": "true",
       "actual": "500",
       "sale": "450",
       "length": "48",
       "width": "42",
       "height": "48",
       "fimg": "",
-      "quantity": 34,
+      "quantity": "34",
       "id": 2
-    },
-    {
-      "title": "New Non Featured Item",
-      "desc": "new item",
-      "featured": null,
-      "actual": "500",
-      "sale": "450",
-      "length": "50",
-      "width": "50",
-      "height": "50",
-      "fimg": "",
-      "quantity": 34,
-      "id": 3
     },
     {
       "title": "New Featured Item",
@@ -51,32 +38,6 @@
       "fimg": "",
       "quantity": "4",
       "id": 4
-    },
-    {
-      "title": "New Wooden Product",
-      "desc": "New Wooden Product",
-      "featured": null,
-      "actual": "700",
-      "sale": "650",
-      "length": "32",
-      "width": "32",
-      "height": "32",
-      "fimg": "",
-      "quantity": 3,
-      "id": 5
-    },
-    {
-      "title": "last test of Featured Item",
-      "desc": "last test of Featured Item",
-      "featured": "true",
-      "actual": "700",
-      "sale": "675",
-      "length": "40",
-      "width": "40",
-      "height": "40",
-      "fimg": "",
-      "quantity": 5,
-      "id": 6
     }
   ],
   "cart": [

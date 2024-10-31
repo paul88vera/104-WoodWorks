@@ -567,16 +567,17 @@ a:hover {
 }
 .delete-container {
   display: flex;
+  position: absolute;
+  top: 20%;
+  right: 5%;
   justify-content: center;
   align-items: center;
-  max-width: 1440px;
   margin-top: -1rem;
-  background-color: var(--secondary-bg);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  z-index: 99;
 }
 .cancel-btn {
   background-color: var(--light-black-bg);
+  margin-top: 2rem;
 }
 /**----------------------
     FORMS - END
@@ -831,10 +832,69 @@ a:hover {
 }
 
 /* Contact Form End */
+/* --------------
+  Services Page
+----------------*/
+.services-section {
+  background-color: var(--secondary-bg);
+  padding: 2rem 0rem;
+}
+.services-section h1 {
+  padding-bottom: 3rem;
+}
+.services-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  padding: 1rem 1rem 1rem 1rem;
+  gap: 1rem;
+}
+.services-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  align-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--text-secondary-color);
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  cursor: default;
+}
+.services-item:hover {
+  box-shadow: 1px 0px 20px #c7c6c670;
+}
+.services-item h2 {
+  width: 100%;
+  text-align: center;
+}
+.services-cta {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem 1rem 1rem;
+  margin: 0 auto;
+}
 
 /*----------------------
       MEDIA QUERIES
 -----------------------*/
+@media screen and (min-width: 1024px) {
+  .services-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .services-item {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 740px) {
   .block-main-container {
     flex-direction: row;
@@ -880,6 +940,9 @@ a:hover {
   }
   .form-container {
     flex-direction: row;
+  }
+  .services-cta {
+    max-width: 30%;
   }
 }
 @media screen and (min-width: 569px) {

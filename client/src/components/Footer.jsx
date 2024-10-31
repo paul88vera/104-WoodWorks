@@ -142,8 +142,8 @@ const Footer = () => {
         <div className="copyright-aside">
           <p>
             Developed by{" "}
-            <Link to="https://paulvera.com" target="_blank" className="">
-              Paul Vera
+            <Link to={`https://verafied.tech`} target="_blank">
+              VERAfied Technologies
             </Link>
           </p>
           <p>San Antonio, TX 78221</p>
