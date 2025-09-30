@@ -2,10 +2,14 @@ import { Link, useLoaderData } from "react-router-dom";
 import { getShopItem } from "../api/shop";
 import { SignedIn } from "@clerk/clerk-react";
 import { useState } from "react";
+import FormGroup from "../components/FormGroup";
+// import { createCart } from "../api/cart";
+
+//TODO! -- Fix this to post shopItem Info to a cart {}
 
 export default function ShopItem() {
   const item = useLoaderData();
-  const [quantity, setQuantity] = useState();
+  const [itemQuantity, setItemQuantity] = useState();
 
   return (
     <>
@@ -33,37 +37,40 @@ export default function ShopItem() {
               <div className="card-sale-price">${item.sale}</div>
               <div className="card-actual-price">was ${item.actual}</div>
             </div>
-            <div className="colors">
-              <div className="color-container">
-                {/* new code */}
-                <div
-                  className={`color-option`}
-                  style={{ backgroundColor: "#ffffff" }}
-                  title="white"></div>
-                <div
-                  className={`color-option`}
-                  style={{ backgroundColor: "#000000" }}
-                  title="coffee"></div>
-                <div
-                  className={`color-option`}
-                  style={{ backgroundColor: "333333" }}
-                  title="gray"></div>
-                {/* end new code */}
-              </div>
+            {/* <div className="colors">
+            <div className="color-container">
+              
+              <div
+                className={`color-option`}
+                style={{ backgroundColor: "#ffffff" }}
+                title="white"></div>
+              <div
+                className={`color-option`}
+                style={{ backgroundColor: "#000000" }}
+                title="coffee"></div>
+              <div
+                className={`color-option`}
+                style={{ backgroundColor: "333333" }}
+                title="gray"></div>
+              
             </div>
+          </div> */}
           </div>
           <div className="quantity-container">
-            <label htmlFor="quantity">
-              <b>qty.</b>
-              <input
-                type="number"
-                name="quantity"
-                id="quantity"
-                min={1}
-                max={3}
-                onChange={(e) => setQuantity(e.target.value)}
-              />
-            </label>
+            <FormGroup>
+              <label htmlFor="quantity">
+                <b>qty.</b>
+                <input
+                  type="number"
+                  name="quantity"
+                  id="quantity"
+                  min={1}
+                  max={3}
+                  defaultValue={itemQuantity || 1}
+                  onChange={(e) => setItemQuantity(e.target.value)}
+                />
+              </label>
+            </FormGroup>
           </div>
           <div>
             <b> Items in stock: {item.quantity}</b>
@@ -93,15 +100,20 @@ export default function ShopItem() {
               onClick={() => {
                 //TODO! need to make a reference to add to localStorage on first render
                 // Adds cart-item ID, Total Quantity for that item, and User Quantity added to cart
-                if (item.quantity !== 0 || NaN || quantity !== 0 || undefined) {
+                if (
+                  item.quantity !== 0 ||
+                  NaN ||
+                  itemQuantity !== 0 ||
+                  undefined
+                ) {
                   localStorage.setItem(`t4_cartItem_${item.id}_id`, item.id);
                   localStorage.setItem(
                     `t4_cartItem_${item.id}_total_quantity`,
-                    item.quantity - quantity
+                    item.quantity - itemQuantity
                   );
                   localStorage.setItem(
                     `t4_cartItem_${item.id}_customer_quantity`,
-                    quantity
+                    itemQuantity
                   );
                 } else {
                   return console.log("no items added to cart");
@@ -119,6 +131,27 @@ export default function ShopItem() {
 async function loader({ request: { signal }, params: { id } }) {
   return await getShopItem(id, { signal });
 }
+
+// async function action({ request, params: id }) {
+//   const formData = await request.formData();
+//   const title = formData.get("title");
+//   const desc = formData.get("description");
+//   const actual = formData.get("actualPrice");
+//   const sale = formData.get("salePrice");
+//   const length = formData.get("length");
+//   const width = formData.get("width");
+//   const height = formData.get("height");
+//   const ftitle = formData.get("feature-title");
+//   const featured = formData.get("featured");
+//   const fdesc = formData.get("feature-title");
+//   const fimg = formData.get("feature-img");
+// }
+
+// const cartItem = await createCart(id, {
+//   title,
+//   shopId,
+//   quantity,
+// });
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const shopItem = {

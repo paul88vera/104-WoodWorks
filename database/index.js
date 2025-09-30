@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const { shop } = require("./db.json");
 
-const port = 3000;
+const port = 5500;
 
 // middleware
 app.use(express.json());
@@ -50,6 +50,6 @@ app.get("/user/profile/:id", (req, res) => {
 });
 
 // Listening to port
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log("Server is now live on port:", port);
 });

@@ -5,6 +5,8 @@ import { IoClose } from "react-icons/io5";
 
 export default function Cart({ closeCart }) {
   const cart = useLoaderData();
+  const price = 40.0;
+  const salePrice = 32.0;
 
   return createPortal(
     <div id="shopping-cart">
@@ -21,7 +23,7 @@ export default function Cart({ closeCart }) {
           </div>
         </div>
         <div className="cart-item__container">
-          {!cart ? (
+          {cart ? (
             <p className="cart-item__empty">Your cart is currently empty</p>
           ) : (
             <>
@@ -32,14 +34,16 @@ export default function Cart({ closeCart }) {
                   <p>Shipping</p>
                   <p className="cart-item__total-price-label">Total</p>
                 </div>
-                {/* <div className="cart-item__prices">
-                  <p>${price}</p>
-                  <p className="cart-item__sale-price-number">-${salePrice}</p>
+                <div className="cart-item__prices">
+                  <p>${price || 32.0}</p>
+                  <p className="cart-item__sale-price-number">
+                    -${salePrice || 40.0}
+                  </p>
                   <p>FREE</p>
                   <p className="cart-item__total-price-number">
-                    ${price - salePrice}
+                    ${(price || 32.0) - salePrice || 40.0}
                   </p>
-                </div> */}
+                </div>
               </div>
               <div>
                 <button className="checkout-btn">SECURE CHECKOUT</button>

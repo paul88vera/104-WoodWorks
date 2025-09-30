@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Services = () => {
   return (
     <div className="services-section">
@@ -40,7 +42,9 @@ const Services = () => {
         </div>
       </div>
       <div className="services-cta">
-        <button className="btn contact-btn">Contact Us</button>
+        <Link className="btn contact-btn" to="/contact">
+          Contact Us
+        </Link>
       </div>
     </div>
   );
