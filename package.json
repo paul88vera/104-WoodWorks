@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm run dev",
     "server": "cd server && npm run start",
-    "devApi": "concurrently \"cd client && npm run dev\" \"cd api && npm run dev\"",
+    "seed": "cd server && npm run seed",
     "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "keywords": [],

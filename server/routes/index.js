@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Shop = require("./shop");
+const Shop = require("./item");
 const User = require("./user");
 const Cart = require("./cart");
 
