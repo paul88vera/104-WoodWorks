@@ -4,14 +4,14 @@ import { baseApi } from "./base";
 // @desc     Get all shop items
 // @access   Public
 export function getShop(options) {
-  return baseApi.get("shop", options).then((res) => res.data);
+  return baseApi.get("item", options).then((res) => res.data);
 }
 
 // @route    GET /shop/item_id
 // @desc     Get shop item by ID
 // @access   Public
 export function getShopItem(id, options) {
-  return baseApi.get(`shop/${id}`, options).then((res) => res.data);
+  return baseApi.get(`item/${id}`, options).then((res) => res.data);
 }
 
 // @route    POST /shop
@@ -19,7 +19,7 @@ export function getShopItem(id, options) {
 // @access   Private
 // @role     ADMIN
 export function createItem(data, options) {
-  return baseApi.post("shop", data, options).then((res) => res.data);
+  return baseApi.post("item", data, options).then((res) => res.data);
 }
 
 // @route    PUT /shop/item_id
@@ -27,7 +27,7 @@ export function createItem(data, options) {
 // @access   Private
 // @role     ADMIN
 export function updateItem(id, data, options) {
-  return baseApi.put(`shop/${id}`, data, options).then((res) => res.data);
+  return baseApi.put(`item/${id}`, data, options).then((res) => res.data);
 }
 
 // @route    DELETE /shop/item_id
@@ -35,7 +35,7 @@ export function updateItem(id, data, options) {
 // @access   Private
 // @role     ADMIN
 export function deleteItem(id) {
-  return baseApi.delete(`shop/${id}`, { method: "DELETE" }).then(() => {
+  return baseApi.delete(`item/${id}`, { method: "DELETE" }).then(() => {
     window.location.replace("/shop");
   });
 }

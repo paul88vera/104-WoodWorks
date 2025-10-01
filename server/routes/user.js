@@ -5,7 +5,7 @@ const Item = require("../models/Item");
 const router = express.Router();
 
 // Add item to cart
-router.post("/:userId/cart", async (req, res) => {
+router.post("/:userId", async (req, res) => {
   try {
     const { itemId, quantity } = req.body;
     const user = await User.findById(req.params.userId);

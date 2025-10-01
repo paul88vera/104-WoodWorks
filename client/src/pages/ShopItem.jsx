@@ -20,22 +20,22 @@ export default function ShopItem() {
         <img
           src="../src/constants/wooden_chair.jpg"
           className="item-image"
-          title={item.title}
+          title={item.name}
         />
 
         <div className="shopitem-container">
           <SignedIn>
             <Link
               className="btn submit-btn edit-btn"
-              to={`/shop/${item.id}/edit`}>
+              to={`/shop/${item._id}/edit`}>
               Edit
             </Link>
           </SignedIn>
           <div className="descriptions">
-            <h2 className="item-title">{item.title}</h2>
+            <h2 className="item-title">{item.name}</h2>
             <div className="price-container">
               <div className="card-sale-price">${item.sale}</div>
-              <div className="card-actual-price">was ${item.actual}</div>
+              <div className="card-actual-price">was ${item.price}</div>
             </div>
             {/* <div className="colors">
             <div className="color-container">
@@ -72,9 +72,9 @@ export default function ShopItem() {
               </label>
             </FormGroup>
           </div>
-          <div>
+          {/* <div>
             <b> Items in stock: {item.quantity}</b>
-          </div>
+          </div> */}
           <div className="specifications-container">
             <h3>Description</h3>
             <div className="description">
@@ -106,13 +106,13 @@ export default function ShopItem() {
                   itemQuantity !== 0 ||
                   undefined
                 ) {
-                  localStorage.setItem(`t4_cartItem_${item.id}_id`, item.id);
+                  localStorage.setItem(`t4_cartItem_${item._id}_id`, item._id);
                   localStorage.setItem(
-                    `t4_cartItem_${item.id}_total_quantity`,
+                    `t4_cartItem_${item._id}_total_quantity`,
                     item.quantity - itemQuantity
                   );
                   localStorage.setItem(
-                    `t4_cartItem_${item.id}_customer_quantity`,
+                    `t4_cartItem_${item._id}_customer_quantity`,
                     itemQuantity
                   );
                 } else {

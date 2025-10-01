@@ -20,11 +20,11 @@ export default function Home() {
           .filter((item) => item.featured !== null)
           .splice(0, 3)
           .map((favs) => (
-            <Link to={`/shop/${favs.id}`} className="shop-card" key={favs.id}>
+            <Link to={`/shop/${favs._id}`} className="shop-card" key={favs._id}>
               <div className="card-img">
                 <img src={Images.chair} alt="item" width="100%" />
               </div>
-              <div className="fav-card-title item-title">{favs.title}</div>
+              <div className="fav-card-title item-title">{favs.name}</div>
             </Link>
           ))}
       </div>

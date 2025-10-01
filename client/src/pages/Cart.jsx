@@ -5,8 +5,8 @@ import { IoClose } from "react-icons/io5";
 
 export default function Cart({ closeCart }) {
   const cart = useLoaderData();
-  const price = 40.0;
-  const salePrice = 32.0;
+  const price = null || 40.0;
+  const salePrice = null || 32.0;
 
   return createPortal(
     <div id="shopping-cart">
