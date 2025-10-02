@@ -1,12 +1,14 @@
 import { useLoaderData } from "react-router-dom";
-import { getCart } from "../api/cart";
+import { getUsers } from "../api/user";
 import { createPortal } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 export default function Cart({ closeCart }) {
   const cart = useLoaderData();
-  const price = null || 40.0;
-  const salePrice = null || 32.0;
+  // const price = cart.price || null;
+  // const salePrice = cart.sale || null;
+
+  console.log(cart);
 
   return createPortal(
     <div id="shopping-cart">
@@ -34,7 +36,7 @@ export default function Cart({ closeCart }) {
                   <p>Shipping</p>
                   <p className="cart-item__total-price-label">Total</p>
                 </div>
-                <div className="cart-item__prices">
+                {/* <div className="cart-item__prices">
                   <p>${price || 32.0}</p>
                   <p className="cart-item__sale-price-number">
                     -${salePrice || 40.0}
@@ -43,7 +45,7 @@ export default function Cart({ closeCart }) {
                   <p className="cart-item__total-price-number">
                     ${(price || 32.0) - salePrice || 40.0}
                   </p>
-                </div>
+                </div> */}
               </div>
               <div>
                 <button className="checkout-btn">SECURE CHECKOUT</button>
@@ -58,7 +60,7 @@ export default function Cart({ closeCart }) {
 }
 
 function loader({ request: { signal } }) {
-  return getCart({ signal });
+  return getUsers({ signal });
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

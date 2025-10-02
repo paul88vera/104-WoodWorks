@@ -2,9 +2,36 @@ use("wonderbread");
 
 // Insert items
 db.items.insertMany([
-  { name: "Gaming Mouse", price: 59.99, description: "RGB wireless mouse" },
-  { name: "Mechanical Keyboard", price: 89.99, description: "Blue switches" },
-  { name: "4K Monitor", price: 299.99, description: "27-inch UHD display" },
+  {
+    name: "Gaming Mouse",
+    price: 59.99,
+    sale: 45.0,
+    height: 52,
+    width: 32,
+    length: 70,
+    description: "RGB wireless mouse",
+    fav: true,
+  },
+  {
+    name: "Mechanical Keyboard",
+    price: 89.99,
+    sale: 85.0,
+    height: "",
+    width: "",
+    length: "",
+    description: "Blue switches",
+    fav: true,
+  },
+  {
+    name: "4K Monitor",
+    price: 299.99,
+    sale: 250.0,
+    height: "",
+    width: "",
+    length: "",
+    description: "27-inch UHD display",
+    fav: true,
+  },
 ]);
 
 // Insert user with cart

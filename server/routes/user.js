@@ -4,11 +4,22 @@ const Item = require("../models/Item");
 
 const router = express.Router();
 
+router.get("/", async (req, res) => {
+  try {
+    const user = await User.find();
+
+    console.log(user);
+    if (!user) return res.status(404).json({ error: "No Users" });
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 // Add item to cart
 router.post("/:userId", async (req, res) => {
   try {
     const { itemId, quantity } = req.body;
-    const user = await User.findById(req.params.userId);
+    const user = await User.findById(req.params.id);
 
     if (!user) return res.status(404).json({ error: "User not found" });
 
@@ -31,7 +42,7 @@ router.post("/:userId", async (req, res) => {
 // Get user cart with full item details
 router.get("/:userId/cart", async (req, res) => {
   try {
-    const user = await User.findById(req.params.userId).populate("cart.item");
+    const user = await User.findById(req.params.id).populate("cart.item");
     if (!user) return res.status(404).json({ error: "User not found" });
 
     res.json(user.cart);

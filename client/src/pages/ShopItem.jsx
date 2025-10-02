@@ -78,7 +78,7 @@ export default function ShopItem() {
           <div className="specifications-container">
             <h3>Description</h3>
             <div className="description">
-              <p>{item.desc}</p>
+              <p>{item.description}</p>
             </div>
             <h3>Dimensions</h3>
             <div className="dimensions">

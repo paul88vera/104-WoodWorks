@@ -129,7 +129,7 @@ const Footer = () => {
 
       <div className="footer-bottom-section">
         <div className="copyright-container">
-          <p>© 2024 10-4 Woodworks -</p>
+          <p>© 2025 10-4 Woodworks -</p>
           <p>
             Terms - Accessibility - Sitemap - Do not sell my personal
             information -
@@ -142,8 +142,8 @@ const Footer = () => {
         <div className="copyright-aside">
           <p>
             Developed by{" "}
-            <Link to={`https://verafied.tech`} target="_blank">
-              VERAfied Technologies
+            <Link to={`https://paulvera.com`} target="_blank">
+              Paul Vera
             </Link>
           </p>
           <p>San Antonio, TX 78221</p>

@@ -6,7 +6,7 @@ import HeroBanner from "../components/HeroBanner";
 export default function Shop() {
   const shop = useLoaderData();
 
-  console.log(shop);
+  // console.log(shop);
 
   return (
     <>

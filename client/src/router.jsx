@@ -5,7 +5,7 @@ import ErrorMessage from "./pages/ErrorMessage";
 import Contact from "./pages/Contact";
 import { ShopRoute } from "./pages/Shop";
 import { homeData } from "./pages/Home";
-import { cartData } from "./pages/Cart";
+// import { cartData } from "./pages/Cart";
 import { shopItem } from "./pages/ShopItem";
 import { newItem } from "./pages/PostItem";
 import { editItem } from "./pages/EditItem";
@@ -42,10 +42,10 @@ export const router = createBrowserRouter([
           },
           { path: "services", element: <Services /> },
           { path: "contact", element: <Contact /> },
-          {
-            path: `cart/:id`,
-            ...cartData,
-          },
+          // {
+          //   path: `cart/:id`,
+          //   ...cartData,
+          // },
           { path: "add", ...newItem },
           { path: "*", element: <Error /> },
         ],
