@@ -27,7 +27,7 @@ export default function EditItem() {
   }
   return (
     <div>
-      <h1 className="section-title">Edit Item</h1>
+      {/* <h1 className="section-title">Edit Item</h1> */}
       {!isSignedIn ? (
         <SignIn />
       ) : (
@@ -67,7 +67,7 @@ async function action({ request, params: { id } }) {
   const featured = formData.get("featured");
   const fdesc = formData.get("feature-title");
   const fimg = formData.get("feature-img");
-  const quantity = formData.get('quantity');
+  const quantity = formData.get("quantity");
 
   const errors = postFormValidator({
     title,
@@ -79,7 +79,7 @@ async function action({ request, params: { id } }) {
     height,
     ftitle,
     fdesc,
-    quantity
+    quantity,
   });
 
   if (Object.keys(errors).length > 0) {
@@ -98,7 +98,7 @@ async function action({ request, params: { id } }) {
       width,
       height,
       fimg,
-      quantity
+      quantity,
     },
     { signal: request.signal }
   );

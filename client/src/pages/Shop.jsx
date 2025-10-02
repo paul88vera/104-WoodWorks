@@ -6,6 +6,8 @@ import HeroBanner from "../components/HeroBanner";
 export default function Shop() {
   const shop = useLoaderData();
 
+  // console.log(shop);
+
   return (
     <>
       <HeroBanner>
@@ -15,14 +17,14 @@ export default function Shop() {
       <h1 className="section-title">Shop 10-4 Woodworks</h1>
       <div className="shop-grid">
         {shop.map((data) => (
-          <Link to={`/shop/${data.id}`} className="shop-card" key={data.id}>
+          <Link to={`/shop/${data._id}`} className="shop-card" key={data._id}>
             <div className="card-img">
               <img src={Images.chair} alt="item" width="100%" />
-              <div className="card-title item-title">{data.title}</div>
+              <div className="card-title item-title">{data.name}</div>
             </div>
             <div className="price-container">
               <div className="card-sale-price">${data.sale}</div>
-              <div className="card-actual-price">was ${data.actual}</div>
+              <div className="card-actual-price">was ${data.price}</div>
             </div>
           </Link>
         ))}

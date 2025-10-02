@@ -12,7 +12,7 @@ export default function PostForm({
     <Form method="post" className="form">
       <div className="form-container">
         <div className="form-row">
-          <FormGroup errorMessage={errors.title}>
+          <FormGroup errorMessage={errors.name}>
             <h3 className="section-title">Item Details</h3>
             <label className="form-label" htmlFor="title">
               Item Title:
@@ -21,10 +21,10 @@ export default function PostForm({
               type="text"
               name="title"
               id="title"
-              defaultValue={defaultValues.title}
+              defaultValue={defaultValues.name}
             />
           </FormGroup>
-          <FormGroup errorMessage={errors.desc}>
+          <FormGroup errorMessage={errors.description}>
             <label className="form-label" htmlFor="description">
               Brief Description:
             </label>
@@ -32,7 +32,7 @@ export default function PostForm({
               type="text"
               name="description"
               id="description"
-              defaultValue={defaultValues.desc}></textarea>
+              defaultValue={defaultValues.description}></textarea>
           </FormGroup>
           <FormGroup>
             <label className="form-label" htmlFor="feartured">
@@ -47,7 +47,7 @@ export default function PostForm({
             />
           </FormGroup>
 
-          <FormGroup errorMessage={errors.actual}>
+          <FormGroup errorMessage={errors.price}>
             <label className="form-label" htmlFor="actualPrice">
               Actual Price: (Dollars)
             </label>
@@ -55,7 +55,7 @@ export default function PostForm({
               type="number"
               name="actualPrice"
               id="actualPrice"
-              defaultValue={defaultValues.actual}
+              defaultValue={defaultValues.price}
             />
           </FormGroup>
 
@@ -78,7 +78,7 @@ export default function PostForm({
                 type="file"
                 name="feature-img"
                 id="feature-img"
-                defaultValue={defaultValues.fimg}
+                defaultValue={defaultValues.img}
               />
               <br />
               (Only JPG or PNG files)
@@ -127,7 +127,7 @@ export default function PostForm({
             </label>
           </FormGroup>
           <br />
-          <FormGroup errorMessage={errors.quantity}>
+          {/* <FormGroup errorMessage={errors.quantity}>
             <label className="form-label" htmlFor="quantity">
               Total Number of Items in Stock
             </label>
@@ -139,7 +139,7 @@ export default function PostForm({
               max={150}
               defaultValue={defaultValues.quantity}
             />
-          </FormGroup>
+          </FormGroup> */}
         </div>
       </div>
 
@@ -163,7 +163,7 @@ export function postFormValidator({
   length,
   width,
   height,
-  quantity,
+  // quantity,
 }) {
   const errors = {};
 
@@ -188,9 +188,9 @@ export function postFormValidator({
   if (height === "") {
     errors.height = "Required";
   }
-  if (quantity === "") {
-    errors.quantity = "Required";
-  }
+  // if (quantity === "") {
+  //   errors.quantity = "Required";
+  // }
 
   return errors;
 }

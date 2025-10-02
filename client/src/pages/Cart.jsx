@@ -1,10 +1,14 @@
 import { useLoaderData } from "react-router-dom";
-import { getCart } from "../api/cart";
+import { getUsers } from "../api/user";
 import { createPortal } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 export default function Cart({ closeCart }) {
   const cart = useLoaderData();
+  // const price = cart.price || null;
+  // const salePrice = cart.sale || null;
+
+  console.log(cart);
 
   return createPortal(
     <div id="shopping-cart">
@@ -21,7 +25,7 @@ export default function Cart({ closeCart }) {
           </div>
         </div>
         <div className="cart-item__container">
-          {!cart ? (
+          {cart ? (
             <p className="cart-item__empty">Your cart is currently empty</p>
           ) : (
             <>
@@ -33,11 +37,13 @@ export default function Cart({ closeCart }) {
                   <p className="cart-item__total-price-label">Total</p>
                 </div>
                 {/* <div className="cart-item__prices">
-                  <p>${price}</p>
-                  <p className="cart-item__sale-price-number">-${salePrice}</p>
+                  <p>${price || 32.0}</p>
+                  <p className="cart-item__sale-price-number">
+                    -${salePrice || 40.0}
+                  </p>
                   <p>FREE</p>
                   <p className="cart-item__total-price-number">
-                    ${price - salePrice}
+                    ${(price || 32.0) - salePrice || 40.0}
                   </p>
                 </div> */}
               </div>
@@ -54,7 +60,7 @@ export default function Cart({ closeCart }) {
 }
 
 function loader({ request: { signal } }) {
-  return getCart({ signal });
+  return getUsers({ signal });
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
