@@ -25,7 +25,7 @@ This website is forward facing and is meant to showcase completed products. When
 - React.js
 - Vite
 - Vitest/Jest/React
-- MongoDB
+- MongoDB (still in development)
 
 <br/>
 
